@@ -18,7 +18,7 @@ const ReclutadorPage = () => {
             🡨
           </button>
           <button>
-            <Link to=''>PUCLICAR VACANTE</Link>
+            <Link to=''>PULICAR VACANTE</Link>
           </button>
         </div>
         <div className="nav-p4">
