@@ -1,0 +1,261 @@
+main > section {
+  padding: 80px 20px;
+  border-bottom: 1px solid rgb(155, 155, 155);
+}
+
+/*SEARCH SECTION*/
+.section-search {
+  display: grid;
+  grid-template-columns: auto;
+  place-items: center;
+  background-color: white; 
+  padding: 60px 20px;
+  grid-template-rows: 15em;
+}
+.div-search {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: 50px;
+  width: 100%;
+  max-width: 700px;
+  border: 1px solid gray;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  border-radius: 50px;
+  overflow: hidden;
+  place-items: center;
+}
+.input-search {
+  font-size: 1.1em;
+  color: #333;
+  border: none;
+  outline: none;
+  background: none;
+  padding: 18px 25px;
+  width: 100%;
+  height: 100%;
+}
+.button-search {
+  background-color: #ff6200;
+  color: white;
+  padding: 18px 30px;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  border: none;
+  height: 100%;
+}
+.button-search:hover {
+  background-color: #db5400;
+}
+
+
+
+/*COMPANIES SECTION*/
+.section-companies {
+  place-items: center;
+  display: grid;
+  background-color: #ffffff;
+  text-align: center;
+}
+.h1-title {
+  font-size: 2.2rem;
+  color: #2c3e50;
+  text-transform: uppercase;
+  margin: 0 auto 15px auto;
+}
+.text {
+  font-size: 1.1rem;
+  color: #555;
+  line-height: 1.7;
+  max-width: 650px;
+  margin: 0 auto 40px auto;
+}
+.div-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+.img-company {
+  max-width: 120px;
+  max-height: 120px;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+.img-company:hover {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+
+
+/*APPLICANT SECTION*/
+.section-applicant {
+  background-color: white;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr;
+  place-items: center;
+  gap: 40px;
+  padding: 60px 20px;
+  height: 50em;
+  width: 1fr;
+}
+.img-ap-link{
+  height: 25em;
+  width: 45em;
+}
+.div-promo {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+  place-items: center;
+  text-align: center;
+  width: 100%;
+  padding: 0 1em;
+}
+.div-text {
+  margin-top: 1.5em;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2em;
+  max-width: 700px;
+  width: 100%;
+}
+.div-text .text {
+  font-size: 1.1em;
+  color: #555;
+  line-height: 1.7;
+  min-width: 0;
+  word-break: break-word;
+}
+.h2-title {
+  font-size: 2.2rem;
+  color: #2c3e50;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/*SECTION BUSSINES*/
+.section-bussines {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto auto;
+  background-color: white;
+  place-items: center;
+  padding: 80px 20px;
+}
+
+.section-bussines .h2-title {
+  margin-bottom: 60px;
+}
+
+.div-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  max-width: 1100px;
+  width: 100%;
+  height: 22em;
+}
+
+.div-item {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  height: 100%;
+  text-align: center;
+  padding: 0 1em;
+  box-sizing: border-box;
+}
+
+.feature-image-placeholder {
+  width: 100%;
+  height: 100%;
+  max-width: 10em;
+  max-height: 10em;
+  margin: 0 auto;
+  background-color: #e0e0e0;
+  border-radius: 8px;
+}
+
+.feature-text {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  place-items: center;
+  padding: 0 1em;
+  overflow: hidden;
+}
+
+.feature-text h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.feature-text p {
+  max-width: 80%;
+  font-size: 1rem;
+  color: #666;
+  line-height: 1.5;
+  text-align: center;
+  overflow-wrap: break-word;
+}
+
+
+
+/*responsividad*/
+@media (max-width: 900px) {
+  .section-applicant {
+    gap: 40px;
+    text-align: center;
+  }
+
+  .div-text {
+    grid-template-columns: 1fr;
+  }
+
+  .features-container,
+  .div-features {
+    grid-template-columns: 1fr;
+    gap: 50px;
+    padding: 0 1em;
+  }
+
+  .feature-text p {
+    max-width: 100%;
+  }
+
+  .feature-image-placeholder {
+    width: 80%;
+    height: 15vh;
+  }
+}
+
+@media (max-width: 600px) {
+  main > section {
+    padding: 60px 15px;
+  }
+
+  .title,
+  .section-bussines .section-title,
+  .section-bussines .h2-title {
+    font-size: 1.8rem;
+  }
+
+  .promo .title {
+    font-size: 1.6rem;
+  }
+
+  .div-text {
+    gap: 1.5em;
+  }
+}
