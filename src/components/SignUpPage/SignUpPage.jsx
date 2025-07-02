@@ -11,7 +11,7 @@ function SignUpPage() {
             <h3>Regístrate para publicar tus vacantes</h3>
             <p>Únete a la mayor red de empleo de Latinoamérica</p>
 
-            <form>
+            <form className='form-signup'>
                 <input type="text" placeholder='Nombre y apellidos' />
                 <input type="text" placeholder='Teléfono' />
                 

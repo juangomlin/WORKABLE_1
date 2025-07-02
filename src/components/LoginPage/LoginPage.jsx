@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/footer';
 import './LoginPage.css';
+import { Link } from 'react-router-dom';
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -57,7 +58,9 @@ const LoginPage = () => {
               {errorMessage && <p className="error-message">{errorMessage}</p>}
               <button type="submit" className="button-submit">Entrar</button>
               <p className="text-link">¿Olvidaste tu contraseña?</p>
-              <p className="text-link">¿No tienes cuenta? Regístrate aquí.</p>
+              <Link to='/Signup'>
+                <p className="text-link">¿No tienes cuenta? Regístrate aquí.</p>
+              </Link>
             </form>
           </div>
       </main>
