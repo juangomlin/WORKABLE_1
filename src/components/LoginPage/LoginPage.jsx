@@ -38,7 +38,7 @@ const LoginPage = () => {
     <>
       <Header />
       <main className='main-login'>
-        <div className="div-form">
+        <div className="div-login">
             <form className="div-lg-form" onSubmit={handleLogin}>
               <h2>Iniciar Sesión</h2>
               <input
@@ -57,7 +57,9 @@ const LoginPage = () => {
               />
               {errorMessage && <p className="error-message">{errorMessage}</p>}
               <button type="submit" className="button-submit">Entrar</button>
-              <p className="text-link">¿Olvidaste tu contraseña?</p>
+              <Link to='/ForgotPassword'>
+                <p className="text-link">¿Olvidaste tu contraseña?</p>
+              </Link>
               <Link to='/Signup'>
                 <p className="text-link">¿No tienes cuenta? Regístrate aquí.</p>
               </Link>

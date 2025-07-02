@@ -6,6 +6,7 @@ import ProfessionalPage from './pages/ProfessionalPage/ProfessionalPage';
 
 import LoginPage from './components/LoginPage/LoginPage';
 import SignUpPage from './components/SignUpPage/SignUpPage';
+import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 
 import ReclutadorPage from './pages/ReclutadorPage/ReclutadorPage';
 import AdminPage from './pages/AdminPage/AdminPage';
@@ -30,6 +31,7 @@ function App() {
 
 				<Route path="/Login" element={<LoginPage />} />
 				<Route path="/Signup" element={<SignUpPage />} />
+				<Route path="/ForgotPassword" element={<ForgotPassword />} />
 				
 				<Route path="/Reclutador" element={<ReclutadorPage />} />
 				<Route path="/Administrador" element={<AdminPage />} />
