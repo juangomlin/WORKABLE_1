@@ -44,7 +44,7 @@
 
 
 
-form {
+.form-signup {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;

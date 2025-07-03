@@ -119,18 +119,6 @@ body{
     margin-left: 10px;
 }
 
-h1 {
-    color: #333;
-    font-size: 40px;
-}
-
-p {
-    color: grey;
-    font-size: 16px;
-    line-height: 1.5;
-    margin: 8px;
-}
-
 .Articulo {
     padding-top: 20px;
     display: flex;
@@ -160,18 +148,6 @@ p {
     margin-left: 30px;
     color: rgb(102, 102, 102);
     font-size: 15px;
-}
-
-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
-    padding: 20px;
-}
-
-.ButtFooter p {
-    color: whitesmoke;
 }
 
 .ButtFooter {

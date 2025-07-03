@@ -49,15 +49,6 @@ body{
     font-size: 25px;
 }
 
-h1 {
-    font-size: 40px;
-}
-
-p {
-    color: grey;
-    font-size: 16px;
-    line-height: 1.5;
-}
 
 .Articulo {
     padding-top: 20px;
@@ -88,14 +79,6 @@ p {
     margin-left: 30px;
     color: rgb(102, 102, 102);
     font-size: 15px;
-}
-
-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
-    padding: 20px;
 }
 
 
