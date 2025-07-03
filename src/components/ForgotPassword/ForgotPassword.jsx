@@ -1,27 +1,38 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import Header from "../Header/Header";
-import './ForgotPassword.css'
+import Footer from "../Footer/footer";
+import './ForgotPassword.css';
 
 const ForgotPassword = () => {
-    return (
+  return (
     <>
-        <Header />
-            <main className="main-forgotpsw">
-                <section className="section-forgotpsw">
-                    <h1>¿Olvidaste tu contraseña?</h1>
-                    <div className="div-forgotpsw">
-                        <form className="form-forgotpsw">
-                            <input type="text" 
-                            className="input-forgotpsw" 
-                            placeholder="Correo electronico"
-                            />
-                        </form>
-                    </div>
-                </section>
-            </main>
+      <Header />
+      <main className="main-forgot-password">
+        <div className="div-forgot-password-container">
+          <form className="form-forgot-password">
+            <h2 className="h2-forgot-password-title">¿Olvidaste tu contraseña?</h2>
+            <p className="p-forgot-password-instruction">
+              Ingresa tu correo electrónico o número de teléfono registrado
+              para recibir un código de recuperación.
+            </p>
+            <input
+              type="text"
+              className="input-forgot-password"
+              placeholder="Correo electrónico o teléfono"
+            />
+            <button type="submit" className="button-send-code">
+              Enviar Código
+            </button>
+            <Link to='/Login'>
+              <p className="text-link-back">Volver al inicio de sesión</p>
+            </Link>
+          </form>
+        </div>
+      </main>
+      <Footer />
     </>
-    )
-}
+  );
+};
 
 export default ForgotPassword;
