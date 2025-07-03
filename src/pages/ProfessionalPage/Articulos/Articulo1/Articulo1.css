@@ -19,17 +19,7 @@
     border-radius: 50px;
 }
 
-.casa {
-    margin-right: 10px;
-    padding-top: 3px;
-    color: #20559b;
-}
 
-.flecha {
-    margin-right: 10px;
-    padding-top: 3px;
-    color: #20559b;
-}
 
 .Buttons a {
     color: #333;
@@ -44,15 +34,15 @@
 .Texto1 {
     text-align: center;
     line-height: 50px;
+    margin-top: 36px;
+    color: #044cab;
 }
 
 h1 {
-    color: #333;
     font-size: 40px;
 }
 
 p {
-    color: grey;
     font-size: 16px;
     line-height: 1.5;
 }
@@ -114,16 +104,19 @@ p {
 
 
 .ButtonsFooter {
-    background-color: #f9f9f9;
     border: 2px solid rgba(128, 128, 128, 0.116);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 50px;
     margin: 40px;
+    background-color: #ff7b00;
+    padding: 16px;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 
 .ButtonsFooter a {
-    color: #333;
+    color: whitesmoke;
     text-decoration: none;
 }
 
