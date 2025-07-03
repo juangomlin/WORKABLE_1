@@ -1,26 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './ProfessionalPage.css';
+import Header from '../../components/Header/Header';
 
 function ProfessionalPage() {
   return (
     <>
-      <header>
-        <div className='Cabec'>
-          <h1 className='Titulo'>
-            <Link to="/">WORKABLE</Link>
-          </h1>
-          <div className='Botones'>
-            <button className='Login'>
-              <Link to="/Login">Login</Link>
-            </button>
-            <button className='IniciSesion'>
-              <Link to="/SignUp">Iniciar sesion</Link>
-            </button>
-          </div>
-        </div>
-      </header>
-
+      <Header />
+      
       <div className='SeccionTitu'>
         <h2>
           Desarrollo profesional
