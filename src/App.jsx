@@ -6,6 +6,7 @@ import ProfessionalPage from './pages/ProfessionalPage/ProfessionalPage';
 
 import LoginPage from './components/LoginPage/LoginPage';
 import SignUpPage from './components/SignUpPage/SignUpPage';
+import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 
 import ReclutadorPage from './pages/ReclutadorPage/ReclutadorPage';
 import AdminPage from './pages/AdminPage/AdminPage';
@@ -14,7 +15,7 @@ import Articulo1 from './pages/ProfessionalPage/Articulos/Articulo1/Articulo1';
 import Articulo2 from './pages/ProfessionalPage/Articulos/Articulo2/Articulo2';
 import Articulo3 from './pages/ProfessionalPage/Articulos/Articulo3/Articulo3';
 
-import SeccReclutam from './pages/ReclutadorPage/Secciones/Seccion1/SeccReclutam';
+import SeccReclutam from './pages/ReclutadorPage/Secciones/Seccion1/ReclutadorPage';
 import SeccConfigura from './pages/ReclutadorPage/Secciones/Seccion2/SeccConfigura';
 import EditSecc from './pages/ReclutadorPage/Secciones/Seccion2/EditSecc/EditSecc';
 
@@ -29,7 +30,8 @@ function App() {
 				<Route path="/professional" element={<ProfessionalPage />} />
 
 				<Route path="/Login" element={<LoginPage />} />
-				<Route path="/signup" element={<SignUpPage />} />
+				<Route path="/Signup" element={<SignUpPage />} />
+				<Route path="/ForgotPassword" element={<ForgotPassword />} />
 				
 				<Route path="/Reclutador" element={<ReclutadorPage />} />
 				<Route path="/Administrador" element={<AdminPage />} />

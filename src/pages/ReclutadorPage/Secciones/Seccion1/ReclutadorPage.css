@@ -4,10 +4,6 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
-    background-color: #f7fafc;
-}
-
 .Header {
     display: flex;
     align-items: left;
@@ -103,11 +99,6 @@ body {
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s;
-}
-
-span a {
-  text-decoration: none;
-  color: whitesmoke;
 }
 
 .ButtonLogin:hover {
@@ -438,13 +429,6 @@ span a {
   font-size: 20px;
   color: #555;
   text-align: center;
-}
-
-.footer-container {
-  background-color: #f8fafc;
-  padding: 40px 20px 20px;
-  border-top: 1px solid #e2e8f0;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .footer-links {
