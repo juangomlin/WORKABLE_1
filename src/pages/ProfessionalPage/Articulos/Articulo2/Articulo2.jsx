@@ -1,27 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Articulo2.css';
+import Header from '../../../../components/Header/Header';
 
 function Articulo2() {
      return (
      <>
      <body>
-          <header className='HeaderBu'>
-          <button className='Buttons'>
-               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" fill="currentColor" class="flecha" viewBox="0 0 16 16">
-               <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
-               </svg>
-               <Link to="/PerfilPro">Volver</Link>
-               </button>
-          <button className='Buttons'>
-               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="18" fill="currentColor" class="casa" viewBox="0 0 16 16">
-               <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
-               </svg>
-               <Link to="/">Inicio</Link>
-          </button>
-     </header>
-               
-
+          
+     <Header />
+          
      <div className='Texto1'>
           <h1>Como crear una carta de presentacion</h1>
           <h2>(Con plantilla)</h2>
@@ -153,7 +141,7 @@ function Articulo2() {
           </div>
 
 
-          <footer>
+          <footer className='FootsButton'>
                <button className='ButtFooter'>
                     <p>Articulo anterior</p>
                     <Link to="/Articulo1">Palabras claves en un CV</Link>

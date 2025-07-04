@@ -42,6 +42,7 @@ body{
 .Texto1 {
     text-align: center;
     line-height: 50px;
+    color: #044cab;
 }
 
 .Texto1 h2{
@@ -118,18 +119,6 @@ body{
     margin-left: 10px;
 }
 
-h1 {
-    color: #333;
-    font-size: 40px;
-}
-
-p {
-    color: grey;
-    font-size: 16px;
-    line-height: 1.5;
-    margin: 8px;
-}
-
 .Articulo {
     padding-top: 20px;
     display: flex;
@@ -161,24 +150,18 @@ p {
     font-size: 15px;
 }
 
-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: row;
-    padding: 20px;
-}
-
 .ButtFooter {
-    background-color: rgb(255, 255, 255);
-    border: 1px solid rgba(128, 128, 128, 0.116);
+    border: 3px solid rgba(128, 128, 128, 0.116);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     border-radius: 50px;
     width: 280px;
+    background-color: #ff7b00;
+    padding: 10px;
+    margin: 16px;
 }
 
 .ButtFooter a {
-    color: #333;
+    color: whitesmoke;
     text-decoration: none;
 }
 
