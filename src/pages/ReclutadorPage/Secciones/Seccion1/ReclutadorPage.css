@@ -4,14 +4,13 @@
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.Header {
+.Header1 {
     display: flex;
     align-items: left;
     padding: 20px;
     gap: 20px;
     width: 100%;
     height: 55px;
-    background-color: #20559b;
 }
 
 .ContReclu {
@@ -105,10 +104,15 @@
   background-color: #df4e00;
 }
 
-.Header h1 {
+.Header1 h1 {
     font-size: 15px;
-    color: whitesmoke;
-    margin-left: 10px;
+    color: #003366;
+    margin-left: 3px;
+}
+
+.Header1 h1 a {
+    text-decoration: none;
+    color: #0c57c6;
 }
 
 .Header2 {
@@ -192,6 +196,11 @@
     height: 48px;
     font-size: 16px;
     font-weight: bold;
+}
+
+span a {
+    text-decoration: none;
+    color: whitesmoke;
 }
 
 .SecTitulo .PubTiOf:hover {
@@ -450,13 +459,13 @@
 .footer-column h4 {
   font-size: 16px;
   font-weight: bold;
-  color: #1a1a1a;
+  color: whitesmoke;
   margin-bottom: 8px;
 }
 
 .footer-column a {
   text-decoration: none;
-  color: #1f2937;
+  color: whitesmoke;
   font-size: 14px;
   transition: color 0.3s ease;
 }
@@ -480,7 +489,7 @@
   height: 36px;
   border-radius: 18px;
   border: 1px solid #cbd5e0;
-  color: #1f2937;
+  color: whitesmoke;
   font-size: 16px;
   transition: background 0.3s ease, color 0.3s ease;
 }
@@ -493,6 +502,6 @@
 .footer-copy {
   text-align: center;
   margin-top: 20px;
-  color: #4b5563;
+  color: whitesmoke;
   font-size: 13px;
 }
