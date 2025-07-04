@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/footer';
+import Footer from '../../components/Footer/Footer';
 import './HomePage.css'; 
 
 const HomePage = () => {
@@ -16,7 +16,7 @@ const HomePage = () => {
         </section>
 
         <section className="section-companies">
-          <h1 className="h1-title">EMPRESAS PRESENTES</h1>
+          <h1 className="h2-title">EMPRESAS PRESENTES</h1>
           <p className="text">Trabajamos con X empresas, para que tengas las mejores oportunidades</p>
           <div className="div-images">
               <img src="https://seeklogo.com/images/K/kfc-logo-A232F2E6D1-seeklogo.com.png" alt="kfc" className='img-company' />
@@ -45,7 +45,7 @@ const HomePage = () => {
           <h2 className="h2-title">Publica tu vacante</h2>
           <div className="div-features">
             <div className="div-item">
-            <div className="feature-image-placeholder"></div>
+            <img src="https://i.postimg.cc/50BsPq1G/security-guard-4809374.png" alt="dd3" className='feature-image-placeholder' />
             <div className="feature-text">
               <h3>Inclusión y Responsabilidad</h3>
               <p>Promovemos la inclusión como un valor fundamental, fortaleciendo tu 
@@ -53,7 +53,7 @@ const HomePage = () => {
             </div>
             </div>
             <div className="div-item">
-              <div className="feature-image-placeholder"></div>
+              <img src="https://i.postimg.cc/7Y8mFRbR/vision-7198823.png" alt="dd2" className='feature-image-placeholder' />
               <div className="feature-text">
                 <h3>Amplía tu visibilidad</h3>
                 <p>Nuestro portal maximiza la visibilidad de tus ofertas entre una
@@ -62,7 +62,7 @@ const HomePage = () => {
               </div>
             </div>
             <div className="div-item">
-            <div className="feature-image-placeholder"></div>
+            <img src="https://i.postimg.cc/Y0qq0RSB/resume-1118828.png" alt="dd1" className='feature-image-placeholder' />
             <div className="feature-text">
               <h3>Publica fácil, gestiona mejor</h3>
               <p>Publica tus vacantes sin costos iniciales y organiza postulaciones

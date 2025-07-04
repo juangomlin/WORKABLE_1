@@ -1,64 +1,92 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState, useRef } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import Header from '../../components/Header/Header';
+import Footer from '../Footer/Footer';
 import './SignUpPage.css';
-import Header from '../Header/Header';
 
-function SignUpPage() {
-    return (
+const SignUpPage = () => {
+  const [userType, setUserType] = useState('aspirante');
+  const formRef = useRef(null);
+  const navigate = useNavigate();
+
+  const handleUserTypeChange = (type) => {
+    if (formRef.current) {
+      formRef.current.reset();
+    }
+    setUserType(type);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (userType === 'reclutador') {
+      navigate('/Reclutador');
+    } else if (userType === 'aspirante') {
+      navigate('/Aspirante');
+    }
+  };
+
+  return (
     <>
-    <Header />
-        <section className='FormVacant'>
-            <h3>Regístrate para publicar tus vacantes</h3>
-            <p>Únete a la mayor red de empleo de Latinoamérica</p>
+      <Header />
+      <main className='main-signup'>
+        <div className='div-signup-container'>
+          <h2 className='h2-signup-title'>Regístrate en workable</h2>
+          <p className='p-signup-instruction'>Crea una cuenta para comenzar</p>
 
-            <form className='form-signup'>
-                <input type="text" placeholder='Nombre y apellidos' />
-                <input type="text" placeholder='Teléfono' />
-                
-                <input type="email" placeholder='Correo de acceso' />
-                <input type="password" placeholder='Contraseña' />
-                
-                <input type="text" placeholder='Nombre comercial de la empresa' />
-                <input type="text" placeholder='Razón social' />
-                
-                <select>
-                    <option value="">Colombia</option>
-                    <option value="mexico">México</option>
-                    <option value="peru">Perú</option>
-                </select>
-                <input type="text" placeholder='NIT' />
-                
-                <input type="text" placeholder='Ciudad o Código postal' />
-                <select>
-                    <option value="">Selecciona el sector</option>
-                    <option value="tec">Tecnología</option>
-                    <option value="salud">Salud</option>
-                </select>
-                
-                <select>
-                    <option value="">N° de trabajadores</option>
-                    <option value="1-10">1-10</option>
-                    <option value="11-50">11-50</option>
-                </select>
+          <div className='signup-buttons'>
+            <button
+              className={`Btn-signup ${userType === 'aspirante' ? 'active Aspirante' : ''}`}
+              onClick={() => handleUserTypeChange('aspirante')}
+            >
+              Soy Aspirante
+            </button>
+            <button
+              className={`Btn-signup ${userType === 'reclutador' ? 'active Reclutador' : ''}`}
+              onClick={() => handleUserTypeChange('reclutador')}
+            >
+              Soy Reclutador
+            </button>
+          </div>
 
-                <select>
-                    <option value="">N° de vacantes anuales</option>
-                    <option value="1-5">1-5</option>
-                    <option value="6-10">6-10</option>
-                </select>
+          <form className='form-signup' ref={formRef} onSubmit={handleSubmit}>
+            {userType === 'aspirante' && (
+              <>
+                <input type='text' name='fullName' placeholder='Nombre Completo' required className='input-signup' />
+                <input type='tel' name='phone' placeholder='Número de Teléfono' required className='input-signup' />
+                <input type='email' name='email' placeholder='Correo Electrónico' required className='input-signup' />
+                <input type='password' name='password' placeholder='Contraseña' required className='input-signup' />
+                <button type='submit' className='button-submit'>Crear Cuenta Aspirante</button>
+              </>
+            )}
 
-                <button type="submit" className='BtnCuenta'>Crear cuenta</button>
-            </form>
-        </section>
+            {userType === 'reclutador' && (
+              <>
+                <div className='form-reclutador-fields'>
+                  <input type='text' name='companyName' placeholder='Nombre de la Empresa' required className='input-signup' />
+                  <input type='text' name='legalName' placeholder='Razón Social' required className='input-signup' />
+                  <input type='text' name='nit' placeholder='NIT' required className='input-signup' />
+                  <input type='text' name='country' placeholder='País' required className='input-signup' />
+                  <input type='text' name='cityOrZip' placeholder='Ciudad o Código Postal' required className='input-signup' />
+                  <input type='text' name='sector' placeholder='Sector' required className='input-signup' />
+                  <input type='number' name='numWorkers' placeholder='Número de Trabajadores' required className='input-signup' />
+                  <input type='number' name='annualVacancies' placeholder='Vacantes Anuales Estimadas' required className='input-signup' />
+                  <input type='email' name='email' placeholder='Correo Electrónico (Contacto)' required className='input-signup' />
+                  <input type='password' name='password' placeholder='Contraseña' required className='input-signup' />
+                </div>
+                <button type='submit' className='button-submit'>Crear Cuenta Reclutador</button>
+              </>
+            )}
+          </form>
 
-        <div className='TxtVacant'>
-            <p>¡Únete a nosotros y publica ofertas gratis! Ahorra costos y tiempo en tus procesos de selección y consigue el candidato ideal de una forma rápida y fácil</p>
+          <p className='text-link'>
+            Ya tienes una cuenta? <Link to='/Login'>Iniciar Sesión</Link>
+          </p>
         </div>
+      </main>
+      <Footer />
     </>
-    );
-}
+  );
+};
 
-export default SignUpPage
-
-
-
+export default SignUpPage;
