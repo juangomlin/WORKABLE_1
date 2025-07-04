@@ -91,9 +91,10 @@ span a {
   align-items: center;
   height: 200px;
   margin-top: 30px;
-  background-color: #e5f3ff;
+  background-color: #f7fafc;
   padding: 20px;
   text-align: center;
+  border: 2px solid #f7fafc;
 }
 
 .title-promo-IRP {
@@ -136,7 +137,9 @@ span a {
   max-width: 1400px;
   padding: 0 20px;
   flex-wrap: wrap;
+  border: 2px solid #f7fafc;
 }
+
 
 .column-images-IRP {
   display: flex;
@@ -204,7 +207,9 @@ span a {
   background-color: #e5f3ff;
   padding: 20px;
   text-align: center;
+  border: 2px solid #f7fafc;
 }
+
 
 .title-cta-middle-IRP {
   font-size: 40px;
@@ -248,7 +253,9 @@ span a {
   margin: 60px auto;
   padding: 0 20px;
   max-width: 1400px;
+  border: 2px solid #f7fafc;
 }
+
 
 .feature-card-IRP {
   text-align: center;
@@ -305,7 +312,9 @@ span a {
   justify-content: center;
   align-items: center;
   margin: 60px auto;
+  border: 2px solid #f7fafc;
 }
+
 
 .button-start-now-IRP {
   background-color: #ff6302;
@@ -351,9 +360,9 @@ span a {
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  margin: 60px auto 0 auto;
   padding-top: 25px;
-  max-width: 800px;
+  max-width: 100%;
+  gap: 67px;
 }
 
 .stat-item-IRP {
