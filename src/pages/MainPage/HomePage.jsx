@@ -45,7 +45,7 @@ const HomePage = () => {
           <h2 className="h2-title">Publica tu vacante</h2>
           <div className="div-features">
             <div className="div-item">
-            <div className="feature-image-placeholder"></div>
+            <div className="feature-image-placeholder1"></div>
             <div className="feature-text">
               <h3>Inclusión y Responsabilidad</h3>
               <p>Promovemos la inclusión como un valor fundamental, fortaleciendo tu 
@@ -53,7 +53,7 @@ const HomePage = () => {
             </div>
             </div>
             <div className="div-item">
-              <div className="feature-image-placeholder"></div>
+              <div className="feature-image-placeholder2"></div>
               <div className="feature-text">
                 <h3>Amplía tu visibilidad</h3>
                 <p>Nuestro portal maximiza la visibilidad de tus ofertas entre una
@@ -62,7 +62,7 @@ const HomePage = () => {
               </div>
             </div>
             <div className="div-item">
-            <div className="feature-image-placeholder"></div>
+            <div className="feature-image-placeholder3"></div>
             <div className="feature-text">
               <h3>Publica fácil, gestiona mejor</h3>
               <p>Publica tus vacantes sin costos iniciales y organiza postulaciones
