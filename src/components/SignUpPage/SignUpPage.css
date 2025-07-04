@@ -1,171 +1,138 @@
-* {
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+.main-signup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 120px);
+  background-color: #f7f9fc;
 }
 
-.HeadVacnt {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #20559b;
-    padding: 20px 40px;
+.div-signup-container {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 8px;
+  border: 1px solid #a8a8a8;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  width: 100%;
+  max-width: 600px;
+  box-sizing: border-box;
 }
 
-.HeadVacnt h1 {
-    color: whitesmoke;
-    font-size: 32px;
-    font-weight: bold;
+.h2-signup-title {
+  font-size: 28px;
+  color: #333333;
+  margin-bottom: 10px;
+  font-weight: 700;
 }
 
-.HeadVacnt h2 {
-    color: whitesmoke;
-    font-size: 20px;
-    font-weight: 400;
+.p-signup-instruction {
+  font-size: 16px;
+  color: #666666;
+  margin-bottom: 30px;
 }
 
-
-.FormVacant {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 30px;
-    background-color: #fff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    border-radius: 12px;
+.signup-buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
 }
 
-.FormVacant h3 {
-    font-size: 24px;
-    color: #333;
-    text-align: left;
-    margin-bottom: 10px;
+.Btn-signup {
+  flex: 1;
+  padding: 12px 15px;
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+  background-color: #f8f9fa;
+  color: #495057;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
 }
 
+.Btn-signup:hover {
+  transform: scale(1.05);
+  background-color: #2541a0;
+  color: white;
+}
 
+.Btn-signup.active {
+  background-color: #2541a0;
+  color: white;
+  box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
+}
 
 .form-signup {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
-
-.FormVacant input,
-.FormVacant select {
-    flex: 1 1 45%;
-    padding: 12px 14px;
-    border: 1px solid #d6d6d6;
-    border-radius: 8px;
-    font-size: 14px;
-    transition: border-color 0.2s ease;
+.form-reclutador-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
 }
 
-.FormVacant input:focus,
-.FormVacant select:focus {
-    border-color: #20559b;
-    outline: none;
+.input-signup {
+  width: 100%;
+  padding: 8px 10px;
+  border: none;
+  border-bottom: 1px solid #ced4da;
+  border-right: 1px solid #ced4da;
+  outline: none;
+  font-size: 16px;
+  color: #495057;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
 }
 
-
-.BtnCuenta {
-    background-color: #ff5c00;
-    color: white;
-    padding: 12px 0;
-    font-size: 16px;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    width: 180px;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
+.input-signup::placeholder {
+  color: #adb5bd;
 }
 
-.BtnCuenta:hover {
-    background-color: #e14f00;
+.button-submit {
+  width: 100%;
+  padding: 14px;
+  background-color: #ff6302;
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 15px;
 }
 
-
-.TxtVacant {
-    text-align: center;
-    margin: 30px auto;
-    max-width: 700px;
-    font-size: 18px;
-    color: #333;
+.text-link {
+  font-size: 15px;
+  color: #666666;
+  margin-top: 25px;
 }
 
-
-.DropAcceso {
-    position: relative;
-    display: inline-block;
+.text-link a {
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
 }
 
-.DropForm {
-    display: none;
-    position: absolute;
-    top: 100%;
-    right: 0;
-    background-color: white;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    padding: 20px;
-    width: 260px;
-    z-index: 999;
+.text-link a:hover {
+  text-decoration: underline;
+  color: #0056b3;
 }
 
+@media (max-width: 600px) {
+  .div-signup-container {
+    max-width: 90%;
+    padding: 25px;
+  }
 
-.DropAcceso:hover .DropForm {
-    display: block;
-}
+  .form-reclutador-fields {
+    grid-template-columns: 1fr;
+  }
 
-
-.DropForm input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 6px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-}
-
-.DropForm label {
-    font-size: 14px;
-    color: #333;
-}
-
-.DropForm a {
-    font-size: 12px;
-    color: #0070cc;
-    text-decoration: none;
-    display: inline-block;
-    margin-bottom: 10px;
-}
-
-.DropForm a:hover {
-    text-decoration: underline;
-}
-
-.DropForm button {
-    width: 100%;
-    background-color: #ff5c00;
-    color: white;
-    border: none;
-    padding: 10px;
-    font-weight: bold;
-    font-size: 14px;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.DropForm button:hover {
-    background-color: #e14f00;
-}
-
-.DropForm .checkbox {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 13px;
-    margin: 10px 0;
+  .button-submit {
+    margin-top: 10px;
+  }
 }

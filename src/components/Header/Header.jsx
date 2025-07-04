@@ -9,8 +9,7 @@ function Header() {
 
 		<header className="header-container" href='/ '>
 			<Link to='/' className="logo-container"> 
-				<p className='p-logo'>WORK</p>
-				<p className='p-logo2'>ABLE</p>
+				<img src="https://i.postimg.cc/PrF6JqqC/WKB-LOGO-copia-removebg-preview.png" alt="imglogo" className='img-wkb'/>
 			</Link>
 
 			<button className="menu-toggle"
@@ -21,7 +20,6 @@ function Header() {
 			</button>
 
 			<nav className={menuOpen ? 'nav-list show' : 'nav-list'}>
-				<Link to="/buscar-ofertas">Buscar Ofertas</Link>
 				<Link to="/Professional">Perfil Profesional</Link>
 				<Link to="/Salary">Salarios</Link>
 			</nav>

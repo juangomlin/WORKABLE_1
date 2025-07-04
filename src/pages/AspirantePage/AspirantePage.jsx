@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { FaBriefcase, FaMapMarkerAlt, FaSearch } from 'react-icons/fa';
-import Footer from '../../components/Footer/footer';
+import Footer from '../../components/Footer/Footer';
 import './AspirantePage.css';
 
 const AspirantePage = () => {
