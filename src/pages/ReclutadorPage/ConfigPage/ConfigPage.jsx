@@ -20,7 +20,7 @@ const ConfigPage = () => {
           <section className='section-module-config-CFP'>
             <div className='header-module-config-CFP'>
               <h2 className='title-module-config-CFP'>Modificar e-mail y clave</h2>
-              <Link to="/Reclutador/configuracion/editar" className='link-edit-config-CFP'>Editar</Link>
+              <Link to="/Reclutador/EditarPerfil" className='link-edit-config-CFP'>Editar</Link>
             </div>
             <div className='box-content-config-CFP'>
               <p className='text-content-config-CFP'>Estás registrado con el e-mail <span className='text-highlight-CFP'>ejemplo@gmail.com.</span> A esta dirección te enviaremos las notificaciones sobre nuevas ofertas y tus aplicaciones.</p>
