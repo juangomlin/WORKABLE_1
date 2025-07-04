@@ -52,6 +52,10 @@ const InfoRecPage = () => {
             </div>
             <div className="process-step-IRP">
               <div className="step-number-IRP">2</div>
+              <div>
+                <h4 className='step-title-IRP'>Revisa las aplicaciones</h4>
+                <p className='step-text-IRP'>Selecciona a los mejores candidatos entre todos CVs recibicidos.</p>
+              </div>
             </div>
             <div className="process-step-IRP">
               <div className="step-number-IRP">3</div>
