@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+ import React, { useState } from 'react'; 
 import { useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { FaBriefcase, FaMapMarkerAlt, FaSearch } from 'react-icons/fa';
@@ -45,6 +45,21 @@ const AspirantePage = () => {
             </button>
           </div>
         </div>
+
+          <div className="perfil-section">
+            <div className="search-section">
+            <div className='name'>
+                nombre de aspirante
+            </div>
+            </div>
+            <div className="divider" />
+            <div className="search-section">
+                  <Link to="/Aspirante/MiPerfil">
+                  <button className='button-perfil'>Mi Perfil</button>
+                </Link>
+            </div>
+          </div>
+
       </header>
       <main className="main-aspirant-page">
         <section className="section-filter-buttons">

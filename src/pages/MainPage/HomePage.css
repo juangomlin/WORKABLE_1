@@ -204,9 +204,6 @@ main > section {
   overflow-wrap: break-word;
 }
 
-
-
-/*responsividad*/
 @media (max-width: 900px) {
   .section-applicant {
     gap: 40px;

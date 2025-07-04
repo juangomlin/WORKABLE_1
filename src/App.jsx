@@ -6,15 +6,16 @@ import LoginPage from './components/LoginPage/LoginPage';
 import SignUpPage from './components/SignUpPage/SignUpPage';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import ReclutadorPage from './pages/ReclutadorPage/ReclutadorPage';
-import AdminPage from './pages/AdminPage/AdminPage';
 import Articulo1 from './pages/ProfessionalPage/Articulos/Articulo1/Articulo1';
 import Articulo2 from './pages/ProfessionalPage/Articulos/Articulo2/Articulo2';
 import Articulo3 from './pages/ProfessionalPage/Articulos/Articulo3/Articulo3';
-import SeccReclutam from './pages/ReclutadorPage/Secciones/Seccion1/ReclutadorPage';
-import SeccConfigura from './pages/ReclutadorPage/Secciones/Seccion2/SeccConfigura';
-import EditSecc from './pages/ReclutadorPage/Secciones/Seccion2/EditSecc/EditSecc';
-import PubAviso from './pages/ReclutadorPage/Secciones/Seccion1/PubAviso/PubAviso';
+import ConfigPage from './pages/ReclutadorPage/ConfigPage/ConfigPage';
+import ProfileEditPage from './pages/ReclutadorPage/ProfileEditPage/ProfileEditPage';
+import PublicacionPage from './pages/ReclutadorPage/PublicacionPage/PublicacionPage';
 import AspirantePage from './pages/AspirantePage/AspirantePage';
+import InfoRecPage from './pages/ReclutadorPage/InfoReclutadorPage/InfoRecPage';
+import AdminPage from './pages/AdminPage/AdminPage';
+import MiPerfil from './pages/AspirantePage/MiPerfil/MiPerfil';
 
 function App() {
 	return (
@@ -31,12 +32,12 @@ function App() {
 				<Route path="/articulo1" element={<Articulo1 />} />
 				<Route path="/articulo2" element={<Articulo2 />} />
 				<Route path="/articulo3" element={<Articulo3 />} />
-				<Route path="/Reclutador/reclutamiento" element={<SeccReclutam />} />
-				<Route path="/Reclutador/configuracion" element={<SeccConfigura />} />
-				<Route path="/Reclutador/editar-seccion" element={<EditSecc />} />
-				<Route path="/PerfilPro" element={<ProfessionalPage />} />
-        		<Route path='/Aspirante' element={<AspirantePage />} />
-				<Route path="/PubAviso" element={<PubAviso />} />
+				<Route path="/Reclutador/Reclutamiento" element={<InfoRecPage />} />
+				<Route path="/Reclutador/Configuracion" element={<ConfigPage />} />
+				<Route path="/Reclutador/EditarPerfil" element={<ProfileEditPage />} />
+        <Route path='/Aspirante' element={<AspirantePage />} />
+		<Route path='/Aspirante/MiPerfil' element={<MiPerfil />} />
+				<Route path="/Reclutador/Publicacion" element={<PublicacionPage />} />
 			</Routes>
 		</Router>
 	);
