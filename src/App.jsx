@@ -15,6 +15,7 @@ import PublicacionPage from './pages/ReclutadorPage/PublicacionPage/PublicacionP
 import AspirantePage from './pages/AspirantePage/AspirantePage';
 import InfoRecPage from './pages/ReclutadorPage/InfoReclutadorPage/InfoRecPage';
 import AdminPage from './pages/AdminPage/AdminPage';
+import MiPerfil from './pages/AspirantePage/MiPerfil/MiPerfil';
 
 function App() {
 	return (
@@ -35,6 +36,7 @@ function App() {
 				<Route path="/Reclutador/Configuracion" element={<ConfigPage />} />
 				<Route path="/Reclutador/EditarPerfil" element={<ProfileEditPage />} />
         <Route path='/Aspirante' element={<AspirantePage />} />
+		<Route path='/Aspirante/MiPerfil' element={<MiPerfil />} />
 				<Route path="/Reclutador/Publicacion" element={<PublicacionPage />} />
 			</Routes>
 		</Router>
