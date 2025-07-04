@@ -1,54 +1,25 @@
-
-
-.titulo {
-  font-size: 28px;
-  font-weight: bold;
-  color: whitesmoke;
-  margin-left: 40px;
-}
-
-.exit-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  cursor: pointer;
-  color: #333;
-  border: 1px solid #333;
-}
-
-nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: whitesmoke;
-  font-size: 1rem;
-}
-
-
-.Titulo {
+.main-salary {
   text-align: center;
   padding: 20px 0;
 }
 
-.Titulo h1 {
+.main-salary h1 {
   font-size: 2rem;
   margin-bottom: 10px;
   color: #333;
 }
 
-.link-ayuda {
+.link-help {
   margin-bottom: 20px;
 }
 
-.link-ayuda a {
-  color: #000000;
+.link-help a {
+  color: #000;
   text-decoration: none;
   font-size: 1rem;
 }
 
-#Dv1 {
+.search-bar {
   display: flex;
   justify-content: center;
   gap: 10px;
@@ -56,7 +27,7 @@ nav a {
   padding-bottom: 20px;
 }
 
-.busqueda {
+.input-search {
   padding: 0.5rem 0.75rem;
   font-size: 16px;
   border: 1px solid #ddd;
@@ -65,7 +36,7 @@ nav a {
   width: 500px;
 }
 
-.boton-busqueda {
+.btn-search {
   padding: 0.5rem 0.75rem;
   font-size: 1rem;
   color: #fff;
@@ -77,11 +48,11 @@ nav a {
   width: 125px;
 }
 
-.boton-busqueda:hover {
+.btn-search:hover {
   background-color: #155ab6;
 }
 
-.filters-container {
+.filters {
   padding-top: 20px;
   display: flex;
   justify-content: space-between;
@@ -91,7 +62,9 @@ nav a {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.filter-section {
+.filter-cat,
+.filter-popular,
+.filter-directive {
   flex: 1;
   border: 1px solid #ddd;
   padding: 20px;
@@ -99,19 +72,21 @@ nav a {
   background-color: whitesmoke;
 }
 
-.filter-section h2 {
+.filter-cat h2,
+.filter-popular h2,
+.filter-directive h2 {
   font-size: 1.5rem;
   margin-bottom: 15px;
   color: #333;
 }
 
-.checkbox-group {
+.checkboxes {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.checkbox-group label {
+.checkboxes label {
   display: flex;
   align-items: center;
   gap: 5px;
