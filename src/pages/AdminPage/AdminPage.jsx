@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import HeaderReclutador from '../../components/HeaderReclutador/HeaderReclutador';
+import HeaderAdmin from '../../components/HeaderAdmin/HeaderAdmin';
 import Footer from '../../components/Footer/Footer';
 import './AdminPage.css';
 
 function AdminPage() {
   return (
     <>
-      <HeaderReclutador />
+      <HeaderAdmin />
       <main className='main-admin-AD'>
         <div className="main-content-admin-AD">
 
@@ -37,10 +37,12 @@ function AdminPage() {
             <section className="section-actions-AD">
               <h2 className="title-section-AD">Acciones Rápidas</h2>
               <div className="action-buttons-AD">
-                <button className="button-action-AD">Gestionar Empresas</button>
-                <button className="button-action-AD">Gestionar Ofertas</button>
-                <button className="button-action-AD">Gestionar Usuarios</button>
-                <button className="button-action-AD">Ver Reportes</button>
+                <Link to="/Admin/Empresas" className="button-action-AD">Gestionar Empresas</Link>
+                <Link to="/Admin/Ofertas" className="button-action-AD">Gestionar Ofertas</Link>
+                <Link to="/Admin/Usuarios" className="button-action-AD">Gestionar Usuarios</Link>
+                <Link to="/Admin/Reportes" className="button-action-AD">Ver Reportes</Link>
+                <Link to="/Admin/CuentasInternas" className="button-action-AD">Cuentas Internas</Link>
+                <Link to="/Admin/Retroalimentacion" className="button-action-AD">Retroalimentación</Link>
               </div>
             </section>
           </div>
@@ -49,7 +51,7 @@ function AdminPage() {
             <section className="section-list-companies-AD">
               <div className="header-list-AD">
                 <h2 className="title-section-AD">Listado de Empresas</h2>
-                <button className="button-add-AD">Añadir Empresa</button>
+                <Link to="/Admin/Empresas" className="button-add-AD">Ver Todas</Link>
               </div>
               <div className="table-container-AD">
                 <table className="data-table-AD">
@@ -67,7 +69,7 @@ function AdminPage() {
                       <td>Coca-Cola S.A.</td>
                       <td>900123456</td>
                       <td>
-                        <button className="button-action-small-AD">Ver</button>
+                        <Link to="/Admin/Empresas/1" className="button-action-small-AD">Ver</Link>
                         <button className="button-delete-small-AD">Eliminar</button>
                       </td>
                     </tr>
@@ -76,7 +78,7 @@ function AdminPage() {
                       <td>Google Ltda.</td>
                       <td>800789123</td>
                       <td>
-                        <button className="button-action-small-AD">Ver</button>
+                        <Link to="/Admin/Empresas/2" className="button-action-small-AD">Ver</Link>
                         <button className="button-delete-small-AD">Eliminar</button>
                       </td>
                     </tr>
@@ -88,23 +90,24 @@ function AdminPage() {
             <section className="section-list-offers-AD">
               <div className="header-list-AD">
                 <h2 className="title-section-AD">Últimas Ofertas</h2>
-                <button className="button-add-AD">Añadir Oferta</button>
+                <Link to="/Admin/Ofertas" className="button-add-AD">Ver Todas</Link>
               </div>
               <div className="list-items-AD">
-                <div className="list-item-AD">Desarrollador Frontend (Reportada) <button className="button-delete-small-AD">Eliminar</button></div>
-                <div className="list-item-AD">Diseñador UX/UI</div>
-                <div className="list-item-AD">Especialista en Marketing (Reportada) <button className="button-delete-small-AD">Eliminar</button></div>
+                <div className="list-item-AD">Desarrollador Frontend (Reportada) <Link to="/Admin/Reportes" className="button-delete-small-AD">Ver Reporte</Link></div> {/* Enlace a página de reportes */}
+                <div className="list-item-AD">Diseñador UX/UI <Link to="/Admin/Ofertas" className="button-action-small-AD">Ver</Link></div>
+                <div className="list-item-AD">Especialista en Marketing (Reportada) <Link to="/Admin/Reportes" className="button-delete-small-AD">Ver Reporte</Link></div>
               </div>
             </section>
 
             <section className="section-list-users-AD">
               <div className="header-list-AD">
                 <h2 className="title-section-AD">Usuarios Reportados</h2>
+                <Link to="/Admin/Reportes" className="button-add-AD">Ver Todos</Link>
               </div>
               <div className="list-items-AD">
-                <div className="list-item-AD">Usuario123 (Comentario inapropiado) <button className="button-delete-small-AD">Eliminar Comentario</button><button className="button-ban-small-AD">Banear</button></div>
-                <div className="list-item-AD">Pepito_Perez (Oferta discriminatoria) <button className="button-delete-small-AD">Eliminar Oferta</button></div>
-                <div className="list-item-AD">Maria_Gomez (Spam) <button className="button-delete-small-AD">Eliminar Contenido</button><button className="button-ban-small-AD">Banear</button></div>
+                <div className="list-item-AD">Usuario123 (Comentario inapropiado) <Link to="/Admin/Reportes" className="button-delete-small-AD">Ver Reporte</Link></div>
+                <div className="list-item-AD">Pepito_Perez (Oferta discriminatoria) <Link to="/Admin/Reportes" className="button-delete-small-AD">Ver Reporte</Link></div>
+                <div className="list-item-AD">Maria_Gomez (Spam) <Link to="/Admin/Reportes" className="button-delete-small-AD">Ver Reporte</Link></div>
               </div>
             </section>
           </div>
