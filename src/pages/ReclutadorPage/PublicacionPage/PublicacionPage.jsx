@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import HeaderReclutador from '../../../components/HeaderReclutador/HeaderReclutador';
 import './PublicacionPage.css';
@@ -6,201 +6,214 @@ import './PublicacionPage.css';
 const PublicacionPage = () => {
   const navigate = useNavigate();
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const [formData, setFormData] = useState({
+    tituloAviso: '',
+    descripcionTrabajo: '',
+    direccion: '',
+    fechaPublicacion: '',
+    fechaLimite: '',
+    modalidadTrabajo: '',
+    tipoContrato: '',
+    empresa: '',
+    municipio: ''
+  });
+
+
+  const modalidades = [
+    { id: 1, nombre: 'Presencial' },
+    { id: 2, nombre: 'Remoto' },
+    { id: 3, nombre: 'Híbrido' }
+  ];
+
+  const tiposContrato = [
+    { id: 1, nombre: 'Indefinido' },
+    { id: 2, nombre: 'Término fijo' },
+    { id: 3, nombre: 'Prácticas' }
+  ];
+
+  const empresas = [
+    { id: 1, nombre: 'Empresa A' },
+    { id: 2, nombre: 'Empresa B' },
+    { id: 3, nombre: 'Empresa C' }
+  ];
+
+  const municipios = [
+    { id: 1, nombre: 'Bogotá' },
+    { id: 2, nombre: 'Medellín' },
+    { id: 3, nombre: 'Cali' }
+  ];
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const datosListos = {
+      NOMBRE: formData.tituloAviso,
+      DESCRIPCION: formData.descripcionTrabajo,
+      DIRECCION: formData.direccion,
+      FECHA_PUBLI: formData.fechaPublicacion,
+      FECHA_LIMIT: formData.fechaLimite,
+      MODAL_ID: parseInt(formData.modalidadTrabajo),
+      TIP_CONT_ID: parseInt(formData.tipoContrato),
+      EMPRE_ID: parseInt(formData.empresa),
+      MUNIC_ID: parseInt(formData.municipio)
+    };
+
+    console.log("Datos listos para guardar en la base de datos:", datosListos);
+    alert("Formulario completado. Verifica la consola del navegador.");
   };
 
   return (
     <>
       <HeaderReclutador />
-
       <main className="container-main-PB">
         <h1 className="title-page-PB">Publicar oferta</h1>
 
-        <section className="section-card-PB">
-          <h2 className="title-section-PB">Visibilidad del aviso</h2>
+        <form onSubmit={handleSubmit}>
+          <section className="section-card-PB">
+            <h2 className="title-section-PB">Datos de la oferta</h2>
 
-          <div className="group-checkbox-PB">
-            <label htmlFor="avisoImpulsado">
-              <input type="checkbox" id="avisoImpulsado" name="avisoImpulsado" />
-              Aviso impulsado
-            </label>
-            <label htmlFor="ofertaDestacada">
-              <input type="checkbox" id="ofertaDestacada" name="ofertaDestacada" />
-              Oferta destacada
-            </label>
-            <label htmlFor="avisoUrgente">
-              <input type="checkbox" id="avisoUrgente" name="avisoUrgente" />
-              Aviso urgente
-            </label>
-            <label htmlFor="noAplicaVisibilidad">
-              <input type="checkbox" id="noAplicaVisibilidad" name="noAplicaVisibilidad" />
-              No Aplica
-            </label>
-          </div>
-
-          <div className="box-warning-PB">
-            <strong>Oferta destacada</strong>
-            <p>
-              Los avisos destacados aparecen en las primeras posiciones y tienen
-              más visibilidad que un aviso común.
-            </p>
-          </div>
-
-          <label htmlFor="ocultarNombreEmpresa">
-            Ocultar nombre de la empresa:
-            <select id="ocultarNombreEmpresa" name="ocultarNombreEmpresa">
-              <option value="si">Sí</option>
-              <option value="no">No</option>
-            </select>
-          </label>
-
-          <label htmlFor="razonContacto">
-            Modificar razón de contacto:
-            <input type="text" id="razonContacto" name="razonContacto" placeholder="Razón de contacto" />
-          </label>
-
-          <label htmlFor="mostrarTelefono">
-            Mostrar teléfono de contacto:
-            <select id="mostrarTelefono" name="mostrarTelefono">
-              <option value="si">Sí</option>
-              <option value="no">No</option>
-            </select>
-          </label>
-
-          <label htmlFor="mostrarDireccion">
-            Mostrar dirección de contacto:
-            <select id="mostrarDireccion" name="mostrarDireccion">
-              <option value="si">Sí</option>
-              <option value="no">No</option>
-            </select>
-          </label>
-        </section>
-
-        <section className="section-card-PB">
-          <h2 className="title-section-PB">Datos del aviso</h2>
-          <form onSubmit={handleSubmit}>
             <label htmlFor="tituloAviso">
               Título del aviso:
-              <input type="text" id="tituloAviso" name="tituloAviso" required />
+              <input
+                type="text"
+                id="tituloAviso"
+                name="tituloAviso"
+                value={formData.tituloAviso}
+                onChange={handleChange}
+                required
+              />
             </label>
-            <label htmlFor="areaTrabajo">
-              Área:
-              <input type="text" id="areaTrabajo" name="areaTrabajo" required />
-            </label>
+
             <label htmlFor="descripcionTrabajo">
-              Descripción del trabajo:
-              <textarea id="descripcionTrabajo" name="descripcionTrabajo" rows="4" required />
+              Descripción:
+              <textarea
+                id="descripcionTrabajo"
+                name="descripcionTrabajo"
+                value={formData.descripcionTrabajo}
+                onChange={handleChange}
+                rows="4"
+                required
+              />
             </label>
-            <label htmlFor="tipoJornada">
-              Tipo de jornada:
-              <select id="tipoJornada" name="tipoJornada">
-                <option value="completa">Completa</option>
-                <option value="parcial">Parcial</option>
-              </select>
+
+            <label htmlFor="direccion">
+              Dirección:
+              <input
+                type="text"
+                id="direccion"
+                name="direccion"
+                value={formData.direccion}
+                onChange={handleChange}
+                required
+              />
             </label>
+
+            <label htmlFor="fechaPublicacion">
+              Fecha de publicación:
+              <input
+                type="date"
+                id="fechaPublicacion"
+                name="fechaPublicacion"
+                value={formData.fechaPublicacion}
+                onChange={handleChange}
+                required
+              />
+            </label>
+
+            <label htmlFor="fechaLimite">
+              Fecha límite:
+              <input
+                type="date"
+                id="fechaLimite"
+                name="fechaLimite"
+                value={formData.fechaLimite}
+                onChange={handleChange}
+                required
+              />
+            </label>
+
             <label htmlFor="modalidadTrabajo">
               Modalidad:
-              <select id="modalidadTrabajo" name="modalidadTrabajo">
-                <option value="presencial">Presencial</option>
-                <option value="remoto">Remoto</option>
-                <option value="hibrido">Híbrido</option>
+              <select
+                id="modalidadTrabajo"
+                name="modalidadTrabajo"
+                value={formData.modalidadTrabajo}
+                onChange={handleChange}
+                required
+              >
+                <option value="">Selecciona una modalidad</option>
+                {modalidades.map((mod) => (
+                  <option key={mod.id} value={mod.id}>
+                    {mod.nombre}
+                  </option>
+                ))}
               </select>
             </label>
+
             <label htmlFor="tipoContrato">
               Tipo de contrato:
-              <select id="tipoContrato" name="tipoContrato">
-                <option value="indefinido">Indefinido</option>
-                <option value="temporal">Temporal</option>
-                <option value="freelance">Freelance</option>
+              <select
+                id="tipoContrato"
+                name="tipoContrato"
+                value={formData.tipoContrato}
+                onChange={handleChange}
+                required
+              >
+                <option value="">Selecciona un tipo de contrato</option>
+                {tiposContrato.map((tipo) => (
+                  <option key={tipo.id} value={tipo.id}>
+                    {tipo.nombre}
+                  </option>
+                ))}
               </select>
             </label>
-            <label htmlFor="sueldoEstimado">
-              Sueldo estimado:
-              <input type="text" id="sueldoEstimado" name="sueldoEstimado" />
-            </label>
-            <label htmlFor="ciudad">
-              Ciudad:
-              <input type="text" id="ciudad" name="ciudad" required />
-            </label>
-            <label htmlFor="cantidadVacantes">
-              Cantidad de vacantes:
-              <input type="number" id="cantidadVacantes" name="cantidadVacantes" min="1" required />
-            </label>
-          </form>
-        </section>
 
-        <section className="section-card-PB">
-          <h2 className="title-section-PB">Requisitos</h2>
-          <form onSubmit={handleSubmit}>
-            <label htmlFor="anosExperiencia">
-              Años de experiencia similar:
-              <input type="number" id="anosExperiencia" name="anosExperiencia" />
-            </label>
-            <label htmlFor="edadRequerida">
-              Edad:
-              <input type="number" id="edadRequerida" name="edadRequerida" />
-            </label>
-            <label htmlFor="estudioMinimo">
-              Estudio mínimo:
-              <select id="estudioMinimo" name="estudioMinimo">
-                <option value="basica">Educación básica</option>
-                <option value="media">Educación media</option>
-                <option value="superior">Educación superior</option>
+            <label htmlFor="empresa">
+              Empresa:
+              <select
+                id="empresa"
+                name="empresa"
+                value={formData.empresa}
+                onChange={handleChange}
+                required
+              >
+                <option value="">Selecciona una empresa</option>
+                {empresas.map((emp) => (
+                  <option key={emp.id} value={emp.id}>
+                    {emp.nombre}
+                  </option>
+                ))}
               </select>
             </label>
-            <label htmlFor="idiomas">
-              Idiomas:
-              <input type="text" id="idiomas" name="idiomas" placeholder="Ej: Español nativo, Inglés B2" />
-            </label>
-            <label htmlFor="destrezaConocimiento">
-              Destreza o conocimiento:
-              <input type="text" id="destrezaConocimiento" name="destrezaConocimiento" />
-            </label>
 
-            <div className="group-radio-PB">
-              <label>Licencia de conducir:</label>
-              <label htmlFor="licenciaSi"><input type="radio" id="licenciaSi" name="licencia" value="si" /> Sí</label>
-              <label htmlFor="licenciaNo"><input type="radio" id="licenciaNo" name="licencia" value="no" /> No</label>
-              <label htmlFor="licenciaSinPermiso"><input type="radio" id="licenciaSinPermiso" name="licencia" value="sin_permiso" /> Sin permiso</label>
-            </div>
-
-            <div className="group-radio-PB">
-              <label>Disponibilidad para viajar:</label>
-              <label htmlFor="viajarSi"><input type="radio" id="viajarSi" name="viajar" value="si" /> Sí</label>
-              <label htmlFor="viajarNo"><input type="radio" id="viajarNo" name="viajar" value="no" /> No</label>
-            </div>
-
-            <label htmlFor="cambioResidencia">
-              Disponibilidad para cambiar de residencia:
-              <input type="text" id="cambioResidencia" name="cambioResidencia" placeholder="Ej: Inmediata, 1 mes, etc." />
+            <label htmlFor="municipio">
+              Municipio:
+              <select
+                id="municipio"
+                name="municipio"
+                value={formData.municipio}
+                onChange={handleChange}
+                required
+              >
+                <option value="">Selecciona un municipio</option>
+                {municipios.map((mun) => (
+                  <option key={mun.id} value={mun.id}>
+                    {mun.nombre}
+                  </option>
+                ))}
+              </select>
             </label>
 
-            <fieldset className="fieldset-PB">
-              <legend className="legend-PB">Tipo de discapacidad:</legend>
-              <label htmlFor="discapacidadVisual"><input type="checkbox" id="discapacidadVisual" name="discapacidad" value="visual" /> Visual</label>
-              <label htmlFor="discapacidadAuditiva"><input type="checkbox" id="discapacidadAuditiva" name="discapacidad" value="auditiva" /> Auditiva</label>
-              <label htmlFor="discapacidadFisica"><input type="checkbox" id="discapacidadFisica" name="discapacidad" value="fisica" /> Física</label>
-              <label htmlFor="discapacidadPsicosocial"><input type="checkbox" id="discapacidadPsicosocial" name="discapacidad" value="psicosocial" /> Psicosocial</label>
-              <label htmlFor="discapacidadIntelectual"><input type="checkbox" id="discapacidadIntelectual" name="discapacidad" value="intelectual" /> Intelectual</label>
-              <label htmlFor="discapacidadMultiple"><input type="checkbox" id="discapacidadMultiple" name="discapacidad" value="multiple" /> Múltiple</label>
-              <label htmlFor="discapacidadNoAplica"><input type="checkbox" id="discapacidadNoAplica" name="discapacidad" value="no_aplica" /> No aplica</label>
-            </fieldset>
-          </form>
-        </section>
-
-        <section className="section-card-PB">
-          <h2 className="title-section-PB">Preguntas de filtrado</h2>
-          <p className="text-info-PB">
-            Añade preguntas de filtro con el objetivo de obtener información más
-            específica sobre el candidato.
-          </p>
-          <button className="button-add-question-PB">Añadir pregunta</button>
-          <p className="text-questions-title-PB">Tus preguntas</p>
-          <textarea className="input-field-PB" rows="3" placeholder="Ej: ¿Tiene disponibilidad inmediata?" />
-
-          <button className="button-submit-PB" type="submit">Publicar</button>
-        </section>
+            <button className="button-submit-PB" type="submit">
+              Publicar
+            </button>
+          </section>
+        </form>
       </main>
     </>
   );
