@@ -1,66 +1,41 @@
- import React, { useState } from 'react'; 
-import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
-import { FaBriefcase, FaMapMarkerAlt, FaSearch } from 'react-icons/fa';
-import Footer from '../../components/Footer/footer';
+import React, { useState } from 'react';
+import { useLocation, Link } from 'react-router-dom';
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer';
 import './AspirantePage.css';
 
 const AspirantePage = () => {
-  const navigate = useNavigate();
+  const location = useLocation();
   const [selectedJob, setSelectedJob] = useState(null);
 
-  const jobListings = [
-    { id: 1, name: 'Desarrollador Frontend', location: 'Medellín, Antioquia', timePosted: 'Hace 11 minutos' },
-    { id: 2, name: 'Analista de Datos', location: 'Bogotá, Cundinamarca', timePosted: 'Hace 1 hora' },
-    { id: 3, name: 'Especialista QA', location: 'Cali, Valle', timePosted: 'Hace 2 días' },
-    { id: 4, name: 'Diseñador UX/UI', location: 'Barranquilla, Atlántico', timePosted: 'Hace 3 días' },
-    { id: 5, name: 'Ingeniero Backend', location: 'Cartagena, Bolívar', timePosted: 'Hace 5 días' },
+  const allJobListings = [
+    { id: 1, name: 'Desarrollador Frontend', location: 'Medellín, Antioquia', timePosted: 'Hace 11 minutos', timepostuled: 'Termina el 28-08-2025', modalidad: 'Presencial', contrato: 'Término Fijo', empresa: "Empresa: Nexabyte Solutions", description: "Buscamos desarrollador frontend con experiencia en React y CSS, JavaScript, HTML." },
+    { id: 2, name: 'Analista de Datos', location: 'Bogotá, Cundinamarca', timePosted: 'Hace 1 hora', timepostuled: 'Termina el 18-09-2025', modalidad: 'Remota', contrato: 'Término Indefinido', empresa: "Empresa: Codexia Tech Labs", description: "Experto en SQL, Python y Power BI, manejo de grandes volúmenes de datos." },
+    { id: 3, name: 'Especialista QA', location: 'Cali, Valle', timePosted: 'Hace 2 días', timepostuled: 'Termina el 08-10-2025', modalidad: 'Presencial', contrato: 'Aprendiz', empresa: "Empresa: Lumitech Global", description: "Pruebas de software, automatización, metodologías ágiles." },
+    { id: 4, name: 'Diseñador UX/UI', location: 'Barranquilla, Atlántico', timePosted: 'Hace 3 días', timepostuled: 'Termina el 20-11-2025', modalidad: 'Presencial', contrato: 'Prestación de Servicios', empresa: "Empresa: QuantumEdge Systems", description: "Experiencia con Figma, Sketch, Adobe XD, prototipado." },
+    { id: 5, name: 'Ingeniero Backend', location: 'Cartagena, Bolívar', timePosted: 'Hace 5 días', timepostuled: 'Termina el 11-07-2025', modalidad: 'Hibrido', contrato: 'Aprendiz', empresa: "Empresa: Synapse Core", description: "Desarrollo de APIs con Node.js y bases de datos SQL, microservicios." },
+    { id: 6, name: 'Asesor Comercial', location: 'Bogotá, D.C.', timePosted: 'Hace 1 día', timepostuled: 'Termina el 01-12-2025', modalidad: 'Presencial', contrato: 'Término Indefinido', empresa: "Empresa: Ventas Pro S.A.", description: "Experiencia en ventas y atención al cliente, manejo de CRM." },
+    { id: 7, name: 'Desarrollador Java', location: 'Medellín, Antioquia', timePosted: 'Hace 4 días', timepostuled: 'Termina el 15-11-2025', modalidad: 'Remota', contrato: 'Término Fijo', empresa: "Empresa: Tech Solutions", description: "Desarrollo de aplicaciones empresariales con Java y Spring Boot." },
+    { id: 8, name: 'Asistente Administrativo', location: 'Bogotá, D.C.', timePosted: 'Hace 6 días', timepostuled: 'Termina el 20-10-2025', modalidad: 'Hibrido', contrato: 'Prestación de Servicios', empresa: "Empresa: Oficina Eficaz", description: "Manejo de documentos, atención telefónica, organización, excel." }
   ];
 
-  const handleGoBack = () => {
-    navigate('/');
-  };
+  const queryParams = new URLSearchParams(location.search);
+  const generalQuery = queryParams.get('query')?.toLowerCase() || '';
+
+  const filteredJobListings = generalQuery
+    ? allJobListings.filter(job =>
+        job.name.toLowerCase().includes(generalQuery) ||
+        job.description.toLowerCase().includes(generalQuery) ||
+        job.location.toLowerCase().includes(generalQuery) ||
+        job.empresa.toLowerCase().includes(generalQuery) ||
+        job.modalidad.toLowerCase().includes(generalQuery) ||
+        job.contrato.toLowerCase().includes(generalQuery)
+      )
+    : allJobListings;
 
   return (
     <>
-        <header className="header-container">
-        <Link to="/" className="logo-container">
-          <p className='p-logo'>WORK</p>
-          <p className='p-logo2'>ABLE</p>
-        </Link>
-
-        <div className="header-center">
-          <div className="job-search-bar">
-            <div className="search-section">
-              <FaBriefcase className="search-icon" />
-              <input type="text" placeholder="asesor comercial" />
-            </div>
-            <div className="divider" />
-            <div className="search-section">
-              <FaMapMarkerAlt className="search-icon" />
-              <input type="text" placeholder="Bogotá, D.C." />
-            </div>
-            <button className="search-button">
-              <FaSearch />
-            </button>
-          </div>
-        </div>
-
-          <div className="perfil-section">
-            <div className="search-section">
-            <div className='name'>
-                nombre de aspirante
-            </div>
-            </div>
-            <div className="divider" />
-            <div className="search-section">
-                  <Link to="/Aspirante/MiPerfil">
-                  <button className='button-perfil'>Mi Perfil</button>
-                </Link>
-            </div>
-          </div>
-
-      </header>
+      <Header />
       <main className="main-aspirant-page">
         <section className="section-filter-buttons">
           <button className="button-filter-dropdown">Ordenar ⌄</button>
@@ -78,31 +53,41 @@ const AspirantePage = () => {
           <section className="section-listings-panel">
             <nav className="nav-job-categories"><p>Busca tu trabajo deseado</p></nav>
             <div className="div-job-cards-grid">
-              {jobListings.map((job) => (
-                <div
-                  key={job.id}
-                  className="div-job-card"
-                  onClick={() => setSelectedJob(job)}
-                >
-                  <h3 className="h3-job-card-title">{job.name}</h3>
-                  <p className="p-job-location">{job.location}</p>
-                  <p className="p-job-time">{job.timePosted}</p>
-                  <div className="div-job-card-actions">
-                    <button
-                      className="button-apply"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      Postularme
-                    </button>
-                    <button
-                      className="button-save"
-                      onClick={(e) => e.stopPropagation()}
-                    >
-                      Guardar
-                    </button>
+              {filteredJobListings.length > 0 ? (
+                filteredJobListings.map((job) => (
+                  <div
+                    key={job.id}
+                    className="div-job-card"
+                    onClick={() => setSelectedJob(job)}
+                  >
+                    <h3 className="h3-job-card-title">{job.name}</h3>
+                    <p className="p-job-location">{job.location}</p>
+                    <p className="p-job-time">{job.timePosted}</p>
+                    <p className="p-job-postuled">{job.timepostuled}</p>
+                    <p className="p-modalidad">{job.modalidad}</p>
+                    <p className="p-contrato">{job.contrato}</p>
+                    <p className="p-empresa">{job.empresa}</p>
+                    <div className="div-job-card-actions">
+                      <button
+                        className="button-apply"
+                        onClick={(e) => { e.stopPropagation(); alert(`Te has postulado a: ${job.name}`); }}
+                      >
+                        Postularme
+                      </button>
+                      <button
+                        className="button-save"
+                        onClick={(e) => { e.stopPropagation(); alert(`Has guardado la oferta: ${job.name}`); }}
+                      >
+                        Guardar
+                      </button>
+                    </div>
                   </div>
+                ))
+              ) : (
+                <div className="no-offers-message">
+                  <p>No hay ofertas disponibles que coincidan con tu búsqueda.</p>
                 </div>
-              ))}
+              )}
             </div>
           </section>
 
@@ -112,8 +97,12 @@ const AspirantePage = () => {
                 <h2 className="h2-job-detail-title">Detalle de {selectedJob.name}</h2>
                 <p className="p-job-detail-location">Ubicación: {selectedJob.location}</p>
                 <p className="p-job-detail-time">Publicado: {selectedJob.timePosted}</p>
+                <p className="p-job-detail-postuled">Termina: {selectedJob.timepostuled}</p>
+                <p className="p-job-detail-modalidad">Modalidad: {selectedJob.modalidad}</p>
+                <p className="p-job-detail-contrato">Contrato: {selectedJob.contrato}</p>
+                <p className="p-job-detail-empresa">Empresa: {selectedJob.empresa}</p>
                 <p className="p-job-detail-description">
-                  Esta es la descripción completa y detallada del puesto de trabajo, incluyendo responsabilidades, requisitos y beneficios. Aquí es donde se expandiría toda la información relevante para el aspirante.
+                  {selectedJob.description}
                 </p>
               </div>
             ) : (
