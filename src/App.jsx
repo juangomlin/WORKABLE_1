@@ -16,6 +16,7 @@ import AspirantePage from './pages/AspirantePage/AspirantePage';
 import InfoRecPage from './pages/ReclutadorPage/InfoReclutadorPage/InfoRecPage';
 import AdminPage from './pages/AdminPage/AdminPage';
 import MiPerfil from './pages/AspirantePage/MiPerfil/MiPerfil';
+import GestigOfertsPage from './pages/ReclutadorPage/GestigOfertsPage/GestigOferts';		
 
 function App() {
 	return (
@@ -38,6 +39,7 @@ function App() {
         <Route path='/Aspirante' element={<AspirantePage />} />
 		<Route path='/Aspirante/MiPerfil' element={<MiPerfil />} />
 				<Route path="/Reclutador/Publicacion" element={<PublicacionPage />} />
+				<Route path="/Reclutador/GestigOferts" element={<GestigOfertsPage />} />
 			</Routes>
 		</Router>
 	);
