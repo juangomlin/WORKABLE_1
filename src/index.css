@@ -20,14 +20,5 @@ body {
 }
 
 a {
-  font-weight: 500;
-  color: #646cff;
   text-decoration: none;
-}
-
-
-h1 {
-  font-size: 2rem; 
-  line-height: 1.1;
-  color: #0035c5; 
 }
