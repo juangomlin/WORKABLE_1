@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 import HomePage from './pages/MainPage/HomePage';
 import SalaryPage from './pages/SalaryPage/SalaryPage';
 import ProfessionalPage from './pages/ProfessionalPage/ProfessionalPage';
@@ -14,8 +15,16 @@ import ProfileEditPage from './pages/ReclutadorPage/ProfileEditPage/ProfileEditP
 import PublicacionPage from './pages/ReclutadorPage/PublicacionPage/PublicacionPage';
 import AspirantePage from './pages/AspirantePage/AspirantePage';
 import InfoRecPage from './pages/ReclutadorPage/InfoReclutadorPage/InfoRecPage';
-import AdminPage from './pages/AdminPage/AdminPage';
 import MiPerfil from './pages/AspirantePage/MiPerfil/MiPerfil';
+import GestigOfertsPage from './pages/ReclutadorPage/GestigOfertsPage/GestigOferts';		
+
+import AdminPage from './pages/AdminPage/AdminPage';
+import AdminAccountsPage from './pages/AdminPage/AdminAccountPage/AdminAccountPage';
+import CompaniesPage from './pages/AdminPage/CompaniesPage/CompaniesPage';
+import FeedBackPage from './pages/AdminPage/FeedBackPage/FeedBackPage';
+import OffersPage from './pages/AdminPage/OffersPage/OffersPage';
+import ReportPage from './pages/AdminPage/ReportPage/ReportPage';
+import UsersManagePage from './pages/AdminPage/UsersManagePage/UsersManagePage';
 
 function App() {
 	return (
@@ -36,11 +45,18 @@ function App() {
 				<Route path="/Reclutador/Configuracion" element={<ConfigPage />} />
 				<Route path="/Reclutador/EditarPerfil" element={<ProfileEditPage />} />
         <Route path='/Aspirante' element={<AspirantePage />} />
-		<Route path='/Aspirante/MiPerfil' element={<MiPerfil />} />
+				<Route path='/Aspirante/MiPerfil' element={<MiPerfil />} />
 				<Route path="/Reclutador/Publicacion" element={<PublicacionPage />} />
+				<Route path="/Reclutador/GestigOferts" element={<GestigOfertsPage />} />
+
+				<Route path="/Administrador/CuentasInternas" element={<AdminAccountsPage />} />
+				<Route path="/Administrador/Empresas" element={<CompaniesPage />} />
+				<Route path="/Administrador/Reportes" element={<ReportPage />} />
+				<Route path="/Administrador/Retroalimentacion" element={<FeedBackPage />} />
+				<Route path="/Administrador/Ofertas" element={<OffersPage />} />
+				<Route path="/Administrador/Usuarios" element={<UsersManagePage />} />
 			</Routes>
 		</Router>
 	);
 }
-
 export default App;

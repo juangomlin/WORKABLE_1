@@ -1,17 +1,45 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import './HomePage.css'; 
 
 const HomePage = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const navigate = useNavigate();
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleSearchSubmit = () => {
+    navigate(`/Aspirante?query=${encodeURIComponent(searchTerm)}`);
+  };
+  
   return (
     <>
       <Header />
       <main>
         <section className="section-search">
           <div className="div-search">
-            <input className='input-search' type="text" placeholder="Buscar ofertas" />
-            <button className="button-search">BUSCAR</button>
+            <input
+              className='input-search'
+              type="text"
+              placeholder="Buscar ofertas"
+              value={searchTerm}
+              onChange={handleSearchChange}
+              onKeyPress={(event) => {
+                if (event.key === 'Enter') {
+                  handleSearchSubmit();
+                }
+              }}
+            />
+            <button
+              className="button-search"
+              onClick={handleSearchSubmit}
+            >
+              BUSCAR
+            </button>
           </div>
         </section>
 
@@ -24,11 +52,12 @@ const HomePage = () => {
               <img src="https://logodownload.org/wp-content/uploads/2014/04/coca-cola-logo-1-1.png" alt="kfc" className='img-company' />
               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw8jO9eC3_62cmHaMI5eveXB2sPm53oHlM8A&s" alt="kfc" className='img-company' />
           </div>
+          <Link to="/" className='link-companies-mp'>Buscar Empresas</Link>
         </section>
 
         <section className='section-applicant'>
           <div className="img-applicant"> 
-            <img src="https://i.imgur.com/5Ms6BF4.png" alt="appl" className='img-ap-link' />
+            <img src="https://i.postimg.cc/htsSQDKG/image.png" alt="appl" className='img-ap-link' />
           </div>
           <div className="div-promo">
             <h2 className="h2-title">¡Encuentra ofertas de trabajo inclusivas!</h2>
@@ -39,6 +68,7 @@ const HomePage = () => {
                 aplica a ofertas de empresas comprometidas con la inclusión</p>
             </div>
           </div>
+          <Link to="/SignUp" className='link-companies-mp'>Crear Cuenta</Link>
         </section>
 
         <section className="section-bussines">
@@ -70,7 +100,7 @@ const HomePage = () => {
             </div>
             </div>
           </div>
-</section>
+        </section>
       </main>
       <Footer />
     </>

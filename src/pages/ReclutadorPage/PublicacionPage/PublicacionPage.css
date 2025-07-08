@@ -26,21 +26,31 @@
   margin-bottom: 1rem;
 }
 
+
 label {
   display: block;
   margin: 0.75rem 0 0.25rem;
+  font-weight: 500;
+  color: #222;
 }
 
-.input-field-PB {
+input,
+select,
+textarea {
   width: 100%;
   padding: 0.6rem;
   border: 1px solid #ccc;
   border-radius: 6px;
   box-sizing: border-box;
+  font-family: inherit;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  background-color: #fff;
 }
 
-textarea.input-field-PB {
+textarea {
   resize: vertical;
+  min-height: 100px;
 }
 
 .group-checkbox-PB,
@@ -111,7 +121,7 @@ textarea.input-field-PB {
   background-color: #db5400;
 }
 
-/* Responsive adjustments */
+
 @media (max-width: 768px) {
   .container-main-PB {
     padding: 1rem;
