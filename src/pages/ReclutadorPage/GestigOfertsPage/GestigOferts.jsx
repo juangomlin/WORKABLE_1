@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link,useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import HeaderReclutador from '../../../components/HeaderReclutador/HeaderReclutador';
 import './GestigOferts.css';
 
@@ -19,11 +19,6 @@ const ofertasSimuladas = [
 ];
 
 const GestigOfertsPage = () => {
-  const navigate = useNavigate();
-
-  const handleExit = () => {
-    navigate('../ReclutadorPage');
-  };
 
   const handleEditar = (id) => {
     alert(`Editar oferta con ID: ${id}`);
@@ -72,12 +67,8 @@ const GestigOfertsPage = () => {
             </table>
           )}
         </section>
-
-        <button className="button-submit-PB" onClick={handleExit}>
-          <Link to="ReclutadorPage/ReclutadorPage">Volver</Link>
-        </button>
+          <Link to="/Reclutador" className='link-goback-go'>Volver</Link>
       </main>
-
     </>
   );
 };

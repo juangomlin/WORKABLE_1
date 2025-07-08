@@ -29,42 +29,42 @@ const HeaderAdmin = () => {
           Dashboard
         </NavLink>
         <NavLink
-          to="/Admin/CuentasInternas"
+          to="/Administrador/CuentasInternas"
           className={({ isActive }) => `nav-item-HAD ${isActive ? 'active-HAD' : ''}`}
           onClick={() => setMenuOpen(false)}
         >
           Cuentas Internas
         </NavLink>
         <NavLink
-          to="/Admin/Reportes"
+          to="/Administrador/Reportes"
           className={({ isActive }) => `nav-item-HAD ${isActive ? 'active-HAD' : ''}`}
           onClick={() => setMenuOpen(false)}
         >
           Reportes
         </NavLink>
         <NavLink
-          to="/Admin/Retroalimentacion"
+          to="/Administrador/Retroalimentacion"
           className={({ isActive }) => `nav-item-HAD ${isActive ? 'active-HAD' : ''}`}
           onClick={() => setMenuOpen(false)}
         >
           Retroalimentación
         </NavLink>
         <NavLink
-          to="/Admin/Empresas"
+          to="/Administrador/Empresas"
           className={({ isActive }) => `nav-item-HAD ${isActive ? 'active-HAD' : ''}`}
           onClick={() => setMenuOpen(false)}
         >
           Empresas
         </NavLink>
         <NavLink
-          to="/Admin/Ofertas"
+          to="/Administrador/Ofertas"
           className={({ isActive }) => `nav-item-HAD ${isActive ? 'active-HAD' : ''}`}
           onClick={() => setMenuOpen(false)}
         >
           Ofertas
         </NavLink>
         <NavLink
-          to="/Admin/Usuarios"
+          to="/Administrador/Usuarios"
           className={({ isActive }) => `nav-item-HAD ${isActive ? 'active-HAD' : ''}`}
           onClick={() => setMenuOpen(false)}
         >
