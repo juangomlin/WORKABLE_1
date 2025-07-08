@@ -45,9 +45,16 @@ function App() {
 				<Route path="/Reclutador/Configuracion" element={<ConfigPage />} />
 				<Route path="/Reclutador/EditarPerfil" element={<ProfileEditPage />} />
         <Route path='/Aspirante' element={<AspirantePage />} />
-		<Route path='/Aspirante/MiPerfil' element={<MiPerfil />} />
+				<Route path='/Aspirante/MiPerfil' element={<MiPerfil />} />
 				<Route path="/Reclutador/Publicacion" element={<PublicacionPage />} />
 				<Route path="/Reclutador/GestigOferts" element={<GestigOfertsPage />} />
+
+				<Route path="/Administrador/CuentasInternas" element={<AdminAccountsPage />} />
+				<Route path="/Administrador/Empresas" element={<CompaniesPage />} />
+				<Route path="/Administrador/Reportes" element={<ReportPage />} />
+				<Route path="/Administrador/Retroalimentacion" element={<FeedBackPage />} />
+				<Route path="/Administrador/Ofertas" element={<OffersPage />} />
+				<Route path="/Administrador/Usuarios" element={<UsersManagePage />} />
 			</Routes>
 		</Router>
 	);
