@@ -51,14 +51,40 @@ const SignUpPage = () => {
 
           <form className='form-signup' ref={formRef} onSubmit={handleSubmit}>
             {userType === 'aspirante' && (
-              <>
-                <input type='text' name='fullName' placeholder='Nombre Completo' required className='input-signup' />
-                <input type='tel' name='phone' placeholder='Número de Teléfono' required className='input-signup' />
-                <input type='email' name='email' placeholder='Correo Electrónico' required className='input-signup' />
-                <input type='password' name='password' placeholder='Contraseña' required className='input-signup' />
-                <button type='submit' className='button-submit'>Crear Cuenta Aspirante</button>
-              </>
-            )}
+                <>
+                  <div className='form-reclutador-fields'>
+                    <input type='text' name='fullName' placeholder='Primer Nombre' required className='input-signup' />
+                    <input type='text' name='fullName' placeholder='Segundo Nombre' required className='input-signup' />
+                    <input type='text' name='fullName' placeholder='Primer Apellido' required className='input-signup' />
+                    <input type='text' name='fullName' placeholder='Segundo Apellido' required className='input-signup' />
+                    <input type='tel' name='phone' placeholder='Número de Teléfono' required className='input-signup' />
+                    <input type='email' name='email' placeholder='Correo Electrónico' required className='input-signup' />
+                    <input type='password' name='password' placeholder='Contraseña' required className='input-signup' />
+                    <input type='text' name='direction' placeholder='Dirección' required className='input-signup' />
+                    <input type='date' name='nacimiento' placeholder='Fecha de Nacimiento' required className='input-signup' />
+                    <select name='gender' required className='input-signup'>
+                      <option value=''>Selecciona tu género</option>
+                      <option value='masculino'>Masculino</option>
+                      <option value='femenino'>Femenino</option>
+                    </select>
+                    <select name='documentType' required className='input-signup'>
+                      <option value=''>Tipo de Documento</option>
+                      <option value='Cedula'>CC</option>
+                      <option value='Tarjeta de Identidad'>TI</option>
+                    </select>
+                    <input type="number" name="numeroID" placeholder="Número de Documento" required className="input-signup" min="0" step="1" />
+                    <select name='discapacidadTipo' required className='input-signup'>
+                      <option value=''>Tipo de Discapacidad</option>
+                      <option value='Visual'>Visual</option>
+                      <option value='Sordera'>Sordera</option>
+                      <option value='Motora'>Motora</option>
+                    </select>
+                    <input type='text' name='discapacidad' placeholder='Discapacidad' required className='input-signup' />
+                  </div>
+                  <button type='submit' className='button-submit'>Crear Cuenta Aspirante</button>
+                </>
+              )}
+
 
             {userType === 'reclutador' && (
               <>
