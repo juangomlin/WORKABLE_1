@@ -86,6 +86,9 @@
   font-weight: 600;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.1s ease;
+  text-decoration: none;
+  display: block;
+  text-align: center;
 }
 
 .button-action-AD:hover {
@@ -109,6 +112,7 @@
   cursor: pointer;
   font-size: 0.9em;
   transition: background-color 0.3s ease;
+  text-decoration: none;
 }
 
 .button-add-AD:hover {
@@ -148,6 +152,8 @@
   font-size: 0.8em;
   margin-right: 0.5em;
   transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .button-action-small-AD:hover {
@@ -163,6 +169,8 @@
   cursor: pointer;
   font-size: 0.8em;
   transition: background-color 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .button-delete-small-AD:hover {

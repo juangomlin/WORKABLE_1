@@ -58,13 +58,6 @@
   margin: 10px;
 }
 
-@media (min-width: 768px) {
-  .main-content-rc {
-    grid-template-columns: 2fr 1fr;
-    max-width: 1400px;
-    margin: 10px auto;
-  }
-}
 
 .column-left-rc,
 .column-right-rc {
@@ -254,30 +247,3 @@
   font-size: 1.1em;
 }
 
-@media (max-width: 500px) {
-  .nav-panel-rc {
-    gap: 1rem;
-    flex-wrap: wrap;
-    justify-content: space-around;
-  }
-  .nav-item-rc {
-    margin-right: 0;
-  }
-  .cards-recruitment-rc {
-    grid-template-columns: 1fr;
-  }
-  .graphs-statistics-rc {
-    grid-template-columns: 1fr;
-  }
-  .section-recruitment-rc,
-  .section-statistics-rc,
-  .section-reviews-rc {
-    padding: 1rem;
-  }
-}
-
-@media (min-width: 501px) and (max-width: 767px) {
-  .cards-recruitment-rc {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}

@@ -52,6 +52,10 @@ const InfoRecPage = () => {
             </div>
             <div className="process-step-IRP">
               <div className="step-number-IRP">2</div>
+              <div>
+                <h4 className='step-title-IRP'>Revisa las aplicaciones</h4>
+                <p className='step-text-IRP'>Selecciona a los mejores candidatos entre todos CVs recibicidos.</p>
+              </div>
             </div>
             <div className="process-step-IRP">
               <div className="step-number-IRP">3</div>
@@ -110,30 +114,6 @@ const InfoRecPage = () => {
             </span>
           </button>
         </div>
-
-        <section className='section-stats-data-IRP'>
-          <div className='text-stats-data-IRP'>
-              <p className='text-main-stats-IRP'>Las mejores empresas ya estan contratando a los mejores candidatos te estamos esperando</p>
-            <div className='grid-stats-IRP'>
-                <div className='stat-item-IRP'>
-                  <h4 className='stat-number-IRP'>7.104.450</h4>
-                  <p className='stat-label-IRP'>Usuarios</p>
-                </div>
-                <div className='stat-item-IRP'>
-                  <h4 className='stat-number-IRP'>17.761.126</h4>
-                  <p className='stat-label-IRP'>Curriculums</p>
-                </div>
-                <div className='stat-item-IRP'>
-                  <h4 className='stat-number-IRP'>11.271</h4>
-                  <p className='stat-label-IRP'>Empresas</p>
-                </div>
-                <div className='stat-item-IRP'>
-                  <h4 className='stat-number-IRP'>808.138</h4>
-                  <p className='stat-label-IRP'>Aplicaciones</p>
-                </div>
-            </div>
-          </div>
-        </section>
       </main>
 
       <Footer />
