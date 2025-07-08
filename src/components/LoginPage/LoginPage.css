@@ -1,56 +1,21 @@
-.section-form {
+.main-login {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 80vh;
 }
 
-.div-form {
+.div-login {
   display: grid;
   place-items: center;
-  grid-template-rows: auto 1fr;
   gap: 1.5em;
   background-color: #fff;
   border-radius: 8px;
   width: 35em;
   min-height: 20em;
-  border: 1px solid #d0d0d0;
+  border: 1px solid #a8a8a8;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   padding: 1.5em;
-}
-
-
-.div-bt-form {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.8em;
-  width: 100%;
-}
-
-.bt-form-aspirante,
-.bt-form-reclutador,
-.bt-form-adminstrador {
-  border: 1px solid #d0d0d0;
-  border-radius: 4px;
-  padding: 0.7em 1em;
-  cursor: pointer;
-  font-size: 0.9em;
-  color: #666;
-  transition: background-color 0.1s ease;
-}
-
-.bt-form-aspirante:active,
-.bt-form-reclutador:active,
-.bt-form-adminstrador:active {
-  background-color: #2b14ad;
-  color: #2b14ad;
-  border-color: #2b14ad;
-}
-
-.bt-form-aspirante:hover:not(.active),
-.bt-form-reclutador:hover:not(.active),
-.bt-form-adminstrador:hover:not(.active) {
-  background-color: #dcdcdc;
 }
 
 .div-lg-form {
@@ -60,6 +25,13 @@
   width: 100%;
   align-items: center;
   padding: 1em 0;
+}
+
+.div-lg-form h2 {
+  font-size: 1.4em;
+  color: #333;
+  margin-bottom: 0.8em;
+  text-align: center;
 }
 
 .input-lg-form {
@@ -97,7 +69,7 @@
 }
 
 .button-submit:hover {
-  background-color: #ff3700;
+  background-color: #e23505;
 }
 
 .text-link {
@@ -113,11 +85,11 @@
   text-decoration: underline;
 }
 
-.div-lg-form h2 {
-  font-size: 1.4em;
-  color: #333;
-  margin-bottom: 0.8em;
-  text-align: center;
+.error-message {
+  color: #ff0000;
+  font-size: 0.9em;
+  margin-top: -0.5em;
+  margin-bottom: 0.5em;
 }
 
 @media (max-width: 768px) {
@@ -125,10 +97,6 @@
     width: 95%;
     padding: 1em;
     min-height: 50vh;
-  }
-
-  .div-bt-form {
-    grid-template-columns: 1fr;
   }
 
   .input-lg-form,

@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+ import React, { useState } from 'react'; 
 import { useNavigate } from 'react-router-dom';
-import Header from '../../components/Header/Header';
+import { Link } from 'react-router-dom';
+import { FaBriefcase, FaMapMarkerAlt, FaSearch } from 'react-icons/fa';
 import Footer from '../../components/Footer/footer';
 import './AspirantePage.css';
 
@@ -22,7 +23,44 @@ const AspirantePage = () => {
 
   return (
     <>
-      <Header />
+        <header className="header-container">
+        <Link to="/" className="logo-container">
+          <p className='p-logo'>WORK</p>
+          <p className='p-logo2'>ABLE</p>
+        </Link>
+
+        <div className="header-center">
+          <div className="job-search-bar">
+            <div className="search-section">
+              <FaBriefcase className="search-icon" />
+              <input type="text" placeholder="asesor comercial" />
+            </div>
+            <div className="divider" />
+            <div className="search-section">
+              <FaMapMarkerAlt className="search-icon" />
+              <input type="text" placeholder="Bogotá, D.C." />
+            </div>
+            <button className="search-button">
+              <FaSearch />
+            </button>
+          </div>
+        </div>
+
+          <div className="perfil-section">
+            <div className="search-section">
+            <div className='name'>
+                nombre de aspirante
+            </div>
+            </div>
+            <div className="divider" />
+            <div className="search-section">
+                  <Link to="/Aspirante/MiPerfil">
+                  <button className='button-perfil'>Mi Perfil</button>
+                </Link>
+            </div>
+          </div>
+
+      </header>
       <main className="main-aspirant-page">
         <section className="section-filter-buttons">
           <button className="button-filter-dropdown">Ordenar ⌄</button>
@@ -38,7 +76,7 @@ const AspirantePage = () => {
 
         <section className="section-job-panels">
           <section className="section-listings-panel">
-            <nav className="nav-job-categories"><p>Explorar por categorías</p></nav>
+            <nav className="nav-job-categories"><p>Busca tu trabajo deseado</p></nav>
             <div className="div-job-cards-grid">
               {jobListings.map((job) => (
                 <div
