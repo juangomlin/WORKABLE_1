@@ -16,6 +16,7 @@ import PublicacionPage from './pages/ReclutadorPage/PublicacionPage/PublicacionP
 import AspirantePage from './pages/AspirantePage/AspirantePage';
 import InfoRecPage from './pages/ReclutadorPage/InfoReclutadorPage/InfoRecPage';
 import MiPerfil from './pages/AspirantePage/MiPerfil/MiPerfil';
+import GestigOfertsPage from './pages/ReclutadorPage/GestigOfertsPage/GestigOferts';		
 
 import AdminPage from './pages/AdminPage/AdminPage';
 import AdminAccountsPage from './pages/AdminPage/AdminAccountPage/AdminAccountPage';
@@ -26,44 +27,29 @@ import ReportPage from './pages/AdminPage/ReportPage/ReportPage';
 import UsersManagePage from './pages/AdminPage/UsersManagePage/UsersManagePage';
 
 function App() {
-  return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/salary" element={<SalaryPage />} />
-        <Route path="/professional" element={<ProfessionalPage />} />
-        <Route path="/Login" element={<LoginPage />} />
-        <Route path="/Signup" element={<SignUpPage />} />
-        <Route path="/ForgotPassword" element={<ForgotPassword />} />
-
-        <Route path="/articulo1" element={<Articulo1 />} />
-        <Route path="/articulo2" element={<Articulo2 />} />
-        <Route path="/articulo3" element={<Articulo3 />} />
-
-        <Route path="/Aspirante" element={<AspirantePage />} />
-        <Route path="/Aspirante/MiPerfil" element={<MiPerfil />} />
-
-        <Route path="/Reclutador" element={<ReclutadorPage />} />
-        <Route path="/Reclutador/Reclutamiento" element={<InfoRecPage />} />
-        <Route path="/Reclutador/Configuracion" element={<ConfigPage />} />
-        <Route path="/Reclutador/EditarPerfil" element={<ProfileEditPage />} />
-        <Route path="/Reclutador/Publicacion" element={<PublicacionPage />} />
-
-        <Route path="/Administrador" element={<AdminPage />} />
-        <Route path="/Admin/CuentasInternas" element={<AdminAccountsPage />} />
-        <Route path="/Admin/Reportes" element={<ReportPage />} />
-        <Route path="/Admin/Retroalimentacion" element={<FeedBackPage />} />
-        <Route path="/Admin/Empresas" element={<CompaniesPage />} />
-        <Route path="/Admin/Ofertas" element={<OffersPage />} />
-        <Route path="/Admin/Usuarios" element={<UsersManagePage />} />
-
-        <Route path="/Admin/Empresas/:id" element={<CompaniesPage />} />
-        <Route path="/Admin/Ofertas/:id" element={<OffersPage />} />
-        <Route path="/Admin/Usuarios/:id" element={<UsersManagePage />} />
-
-      </Routes>
-    </Router>
-  );
+	return (
+		<Router>
+			<Routes>
+				<Route path="/" element={<HomePage />} />
+				<Route path="/salary" element={<SalaryPage />} />
+				<Route path="/professional" element={<ProfessionalPage />} />
+				<Route path="/Login" element={<LoginPage />} />
+				<Route path="/Signup" element={<SignUpPage />} />
+				<Route path="/ForgotPassword" element={<ForgotPassword />} />
+				<Route path="/Reclutador" element={<ReclutadorPage />} />
+				<Route path="/Administrador" element={<AdminPage />} />
+				<Route path="/articulo1" element={<Articulo1 />} />
+				<Route path="/articulo2" element={<Articulo2 />} />
+				<Route path="/articulo3" element={<Articulo3 />} />
+				<Route path="/Reclutador/Reclutamiento" element={<InfoRecPage />} />
+				<Route path="/Reclutador/Configuracion" element={<ConfigPage />} />
+				<Route path="/Reclutador/EditarPerfil" element={<ProfileEditPage />} />
+        <Route path='/Aspirante' element={<AspirantePage />} />
+		<Route path='/Aspirante/MiPerfil' element={<MiPerfil />} />
+				<Route path="/Reclutador/Publicacion" element={<PublicacionPage />} />
+				<Route path="/Reclutador/GestigOferts" element={<GestigOfertsPage />} />
+			</Routes>
+		</Router>
+	);
 }
-
 export default App;
