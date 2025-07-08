@@ -120,9 +120,11 @@ const AspirantePage = () => {
                 <h2 className="h2-job-detail-title">Detalle de {selectedJob.name}</h2>
                 <p className="p-job-detail-location">Ubicación: {selectedJob.location}</p>
                 <p className="p-job-detail-time">Publicado: {selectedJob.timePosted}</p>
+                <p className="p-job-detail-postuled">Termina: {selectedJob.timepostuled}</p>
+                <p className="p-job-detail-modalidad">Modalidad: {selectedJob.modalidad}</p>
+                <p className="p-job-detail-contrato">Contrato: {selectedJob.contrato}</p>
                 <p className="p-job-detail-description">
-                  Esta es la descripción completa y detallada del puesto de trabajo, incluyendo responsabilidades, requisitos y beneficios. Aquí es donde se expandiría toda la información relevante para el aspirante.
-                </p>
+                  Empresa líder en el sector metalmecanica se encuentra en la búsqueda de personal para laborar en el cargo de Analista de Laboratorio. En este rol, serás responsable de realizar análisis y pruebas a materia prima y producto en linea y terminado para asegurar la calidad y el cumplimiento de especificaciones.                </p>
               </div>
             ) : (
               <div className="div-no-selection-message">
