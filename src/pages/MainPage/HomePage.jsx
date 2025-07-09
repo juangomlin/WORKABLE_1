@@ -1,18 +1,45 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import './HomePage.css'; 
 
 const HomePage = () => {
+  const [searchTerm, setSearchTerm] = useState('');
+  const navigate = useNavigate();
+
+  const handleSearchChange = (event) => {
+    setSearchTerm(event.target.value);
+  };
+
+  const handleSearchSubmit = () => {
+    navigate(`/Aspirante?query=${encodeURIComponent(searchTerm)}`);
+  };
+  
   return (
     <>
       <Header />
       <main>
         <section className="section-search">
           <div className="div-search">
-            <input className='input-search' type="text" placeholder="Buscar ofertas" />
-            <button className="button-search">BUSCAR</button>
+            <input
+              className='input-search'
+              type="text"
+              placeholder="Buscar ofertas"
+              value={searchTerm}
+              onChange={handleSearchChange}
+              onKeyPress={(event) => {
+                if (event.key === 'Enter') {
+                  handleSearchSubmit();
+                }
+              }}
+            />
+            <button
+              className="button-search"
+              onClick={handleSearchSubmit}
+            >
+              BUSCAR
+            </button>
           </div>
         </section>
 
@@ -73,7 +100,7 @@ const HomePage = () => {
             </div>
             </div>
           </div>
-</section>
+        </section>
       </main>
       <Footer />
     </>

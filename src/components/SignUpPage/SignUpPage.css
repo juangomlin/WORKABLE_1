@@ -62,13 +62,7 @@
   box-shadow: 0 2px 8px rgba(0, 123, 255, 0.2);
 }
 
-.form-signup {
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-.form-reclutador-fields {
+.form-reclutador-fields{
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 18px;
