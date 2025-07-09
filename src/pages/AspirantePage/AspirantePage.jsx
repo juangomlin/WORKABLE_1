@@ -3,6 +3,7 @@ import { useLocation, Link } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer';
 import './AspirantePage.css';
+import HeaderAspirant from '../../components/HeaderAspirant/HeaderAspirant';
 
 const AspirantePage = () => {
   const location = useLocation();
@@ -35,7 +36,7 @@ const AspirantePage = () => {
 
   return (
     <>
-      <Header />
+      <HeaderAspirant/>
       <main className="main-aspirant-page">
         <section className="section-filter-buttons">
           <button className="button-filter-dropdown">Ordenar ⌄</button>
