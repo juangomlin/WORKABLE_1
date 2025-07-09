@@ -17,7 +17,6 @@ import AspirantePage from './pages/AspirantePage/AspirantePage';
 import InfoRecPage from './pages/ReclutadorPage/InfoReclutadorPage/InfoRecPage';
 import MiPerfil from './pages/AspirantePage/MiPerfil/MiPerfil';
 import GestigOfertsPage from './pages/ReclutadorPage/GestigOfertsPage/GestigOferts';		
-
 import AdminPage from './pages/AdminPage/AdminPage';
 import AdminAccountsPage from './pages/AdminPage/AdminAccountPage/AdminAccountPage';
 import CompaniesPage from './pages/AdminPage/CompaniesPage/CompaniesPage';
@@ -25,6 +24,8 @@ import FeedBackPage from './pages/AdminPage/FeedBackPage/FeedBackPage';
 import OffersPage from './pages/AdminPage/OffersPage/OffersPage';
 import ReportPage from './pages/AdminPage/ReportPage/ReportPage';
 import UsersManagePage from './pages/AdminPage/UsersManagePage/UsersManagePage';
+import Empresas from './pages/MainPage/Empresas/Empresas';
+import KFCPage from './pages/MainPage/Empresas/KFC/KFCPage';
 
 function App() {
 	return (
@@ -55,8 +56,10 @@ function App() {
 				<Route path="/Administrador/Retroalimentacion" element={<FeedBackPage />} />
 				<Route path="/Administrador/Ofertas" element={<OffersPage />} />
 				<Route path="/Administrador/Usuarios" element={<UsersManagePage />} />
+				<Route path="/Empresas" element={<Empresas />} />
+				<Route path="/KFCPage" element={<KFCPage />} />
 			</Routes>
 		</Router>
 	);
 }
-export default App;
+export default App; 

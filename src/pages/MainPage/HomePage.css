@@ -3,7 +3,7 @@ main > section {
   border-bottom: 1px solid rgb(155, 155, 155);
 }
 
-/*SEARCH SECTION*/
+
 .section-search {
   display: grid;
   grid-template-columns: auto;
@@ -11,7 +11,9 @@ main > section {
   background-color: white; 
   padding: 60px 20px;
   grid-template-rows: 15em;
+  border: 2px solid #ffffff;
 }
+
 .div-search {
   display: grid;
   grid-template-columns: 1fr auto;
@@ -50,14 +52,13 @@ main > section {
 }
 
 
-
-/*COMPANIES SECTION*/
 .section-companies {
   place-items: center;
   display: grid;
   background-color: #ffffff;
   text-align: center;
   gap: 50px;
+  border: 2px solid #ffffff;
 }
 .text {
   font-size: 1.1rem;
@@ -106,7 +107,6 @@ main > section {
 
 
 
-/*APPLICANT SECTION*/
 .section-applicant {
   background-color: white;
   display: grid;
@@ -117,7 +117,9 @@ main > section {
   padding: 60px 20px;
   height: 50em;
   width: 1fr;
+  border: 2px solid #ffffff;
 }
+
 .img-ap-link{
   height: 22em;
   width: 22em;

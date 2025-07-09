@@ -47,12 +47,14 @@ const HomePage = () => {
           <h1 className="h2-title">EMPRESAS PRESENTES</h1>
           <p className="text">Trabajamos con X empresas, para que tengas las mejores oportunidades</p>
           <div className="div-images">
-              <img src="https://seeklogo.com/images/K/kfc-logo-A232F2E6D1-seeklogo.com.png" alt="kfc" className='img-company' />
+              <Link to="/KFCPage" >
+                  <img src="https://seeklogo.com/images/K/kfc-logo-A232F2E6D1-seeklogo.com.png" alt="kfc" className='img-company' />
+              </Link>
               <img src="https://images.seeklogo.com/logo-png/35/3/starbucks-logo-png_seeklogo-354127.png" alt="kfc" className='img-company' />
               <img src="https://logodownload.org/wp-content/uploads/2014/04/coca-cola-logo-1-1.png" alt="kfc" className='img-company' />
               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw8jO9eC3_62cmHaMI5eveXB2sPm53oHlM8A&s" alt="kfc" className='img-company' />
           </div>
-          <Link to="/" className='link-companies-mp'>Buscar Empresas</Link>
+          <Link to="/Empresas" className="link-companies-mp">Ver todas las empresas</Link>
         </section>
 
         <section className='section-applicant'>
