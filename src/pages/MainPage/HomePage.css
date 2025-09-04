@@ -51,7 +51,6 @@ main > section {
   background-color: #db5400;
 }
 
-
 .section-companies {
   place-items: center;
   display: grid;
@@ -60,12 +59,14 @@ main > section {
   gap: 50px;
   border: 2px solid #ffffff;
 }
+
 .text {
   font-size: 1.1rem;
   color: #555;
   line-height: 1.7;
   max-width: 650px;
 }
+
 .div-images {
   display: flex;
   justify-content: center;
@@ -73,6 +74,7 @@ main > section {
   flex-wrap: wrap;
   gap: 50px;
 }
+
 .img-company {
   max-width: 120px;
   max-height: 120px;
@@ -81,30 +83,39 @@ main > section {
   object-fit: contain;
   filter: grayscale(100%);
   opacity: 0.7;
-  transition: all 0.3s ease;
+  transition: all 0.4s ease;
 }
+
 .img-company:hover {
   filter: grayscale(0%);
   opacity: 1;
   transform: scale(1.1);
 }
-.link-companies-mp {
-	display: inline-block;
-	border-radius: 35px;
+
+.button-companies-mp {
+  border-radius: 35px;
 	border: 2px solid #1f258b;
 	padding: 0.5em 1.6em;
 	background-color: transparent;
 	font-weight: bold;
+  font-size: 18px;
   text-decoration: none;
   transition: background-color 0.5s, transform 0.5s;
+  color: #1f258b;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
 }
-.link-companies-mp:hover {
-	background-color: #1f258b;
+
+.button-companies-mp:hover {
+  background-color: #1f258b;
 	color: white;
 	transform: scale(1.1);
 }
 
-
+.link-companies-mp {
+	color: inherit;
+}
 
 
 .section-applicant {
@@ -153,6 +164,25 @@ main > section {
   color: #2541a0;
   text-transform: uppercase;
   text-align: center;
+}
+
+.button-section-applicant {
+  border-radius: 35px;
+  border: 2px solid #1f258b;
+  padding: 0.5em 1.6em;
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: none;
+  transition: background-color 0.5s, transform 0.5s;
+  color: #1f258b;
+  cursor: pointer;
+}
+
+.button-section-applicant:hover {
+  background-color: #1f258b;
+  color: white;
+  transform: scale(1.1);
 }
 
 /*SECTION BUSSINES*/

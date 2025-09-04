@@ -43,8 +43,10 @@ const HomePage = () => {
           </div>
         </section>
 
+        
+        
         <section className="section-companies">
-          <h1 className="h2-title">EMPRESAS PRESENTES</h1>
+              <h1 className="h2-title">EMPRESAS PRESENTES</h1>
           <p className="text">Trabajamos con X empresas, para que tengas las mejores oportunidades</p>
           <div className="div-images">
               <Link to="/KFCPage" >
@@ -54,8 +56,11 @@ const HomePage = () => {
               <img src="https://logodownload.org/wp-content/uploads/2014/04/coca-cola-logo-1-1.png" alt="kfc" className='img-company' />
               <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw8jO9eC3_62cmHaMI5eveXB2sPm53oHlM8A&s" alt="kfc" className='img-company' />
           </div>
-          <Link to="/Empresas" className="link-companies-mp">Ver todas las empresas</Link>
+          <button className='button-companies-mp'>
+            <Link to="/Companies" className='link-companies-mp'>Ver todas las empresas</Link>
+          </button>
         </section>
+
 
         <section className='section-applicant'>
           <div className="img-applicant"> 
@@ -70,8 +75,12 @@ const HomePage = () => {
                 aplica a ofertas de empresas comprometidas con la inclusión</p>
             </div>
           </div>
-          <Link to="/SignUp" className='link-companies-mp'>Crear Cuenta</Link>
+          <button className='button-section-applicant'>
+              <Link to="/SignUp" className='link-companies-mp'>Crear Cuenta</Link>
+          </button>
         </section>
+
+        
 
         <section className="section-bussines">
           <h2 className="h2-title">Publica tu vacante</h2>
