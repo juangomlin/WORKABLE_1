@@ -138,28 +138,86 @@ main > section {
   background-color: #db5400;
 }
 
-.section-companies {
-  place-items: center;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
-  grid-row: 2;
+.empresas-container {
   background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 130px;
+  padding: 1rem;
+  border: none;
+}
+
+.empresas-texto {
+  max-width: 40%;
+}
+
+.empresas-texto h2 {
+  font-size: 2rem;
+  color: #2541a0;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
   text-align: center;
-  gap: 50px;
-  border: 2px solid #ffffff;
 }
 
-.title-companies {
-  grid-column: 1/3;
-}
-
-.text {
+.empresas-texto p {
   font-size: 1.1rem;
   color: #555;
-  line-height: 1.7;
-  max-width: 650px;
+  line-height: 1.6;
+  text-align: center;
 }
+
+.carousel {
+  position: relative;
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  background: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.slides {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  animation: slide 10s infinite;
+}
+
+.slides img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 40%;
+}
+
+@keyframes slide {
+  0%, 30% { transform: translateX(0); }
+  33%, 63% { transform: translateX(-100%); }
+  66%, 96% { transform: translateX(-200%); }
+  100% { transform: translateX(0); }
+}
+
+.button-companies-mp {
+  font-size: 20px;
+  margin: 40px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.button-companies-mp a {
+  text-decoration: none;
+  color: #1f258b;
+}
+
 
 .div-images {
   display: flex;
