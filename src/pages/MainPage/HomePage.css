@@ -3,7 +3,6 @@ main > section {
   border-bottom: 1px solid rgb(155, 155, 155);
 }
 
-
 .section-search {
   display: grid;
   grid-template-columns: auto;
@@ -20,8 +19,26 @@ main > section {
   place-items: center;
   background-color: white; 
   padding: 60px 20px;
-  grid-template-rows: 15em;
+  grid-template-rows: 15em;   
   border: 2px solid #ffffff;
+}
+
+.links {
+  color: #2541a0;
+}
+
+.links a {
+  text-decoration: none;
+  color: #2541a0;
+}
+
+.links-title a {
+  text-decoration: none;
+  color: #2541a0;
+}
+
+.links-title {
+  color: #2541a0;
 }
 
 .div-publish {
@@ -134,6 +151,7 @@ main > section {
   height: 100%;
 }
 
+
 .button-search:hover {
   background-color: #db5400;
 }
@@ -167,6 +185,18 @@ main > section {
   line-height: 1.6;
   text-align: center;
 }
+
+.button-companies  {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.button-companies a {
+  text-decoration: #2541a0;
+}
+
 
 .carousel {
   position: relative;
