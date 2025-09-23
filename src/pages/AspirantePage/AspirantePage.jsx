@@ -9,7 +9,7 @@ const AspirantePage = () => {
   const [selectedJob, setSelectedJob] = useState(null);
 
   const allJobListings = [
-    { id: 1, name: 'Desarrollador Frontend', location: 'Medellín, Antioquia', timePosted: 'Hace 11 minutos', timepostuled: 'Termina el 28-08-2025', modalidad: 'Presencial', contrato: 'Término Fijo', empresa: "Empresa: Nexabyte Solutions", description: "Buscamos desarrollador frontend con experiencia en React y CSS, JavaScript, HTML." },
+    { id: 1, name: 'Desarrollador Frontend', location: 'Medellín, Antioquia', timePosted: 'Hace 11 minutos', timepostuled: 'Termina el 28-08-2025', modalidad: 'Presencial', contrato: 'Término Fijo', empresa: "Empresa: Nexabyte Solutions", description: "Estamos en la búsqueda de un desarrollador frontend con experiencia en React, CSS, JavaScript y HTML. La persona ideal debe ser capaz de construir interfaces modernas, dinámicas y responsivas, trabajar en equipo con diseñadores y backend, y aportar ideas que mejoren la experiencia del usuario. Valoramos la atención al detalle, la creatividad y la capacidad de transformar requerimientos en soluciones funcionales y atractivas.s", salary: "2.500.000", fulltime: "Tiempo Completo"},
     { id: 2, name: 'Analista de Datos', location: 'Bogotá, Cundinamarca', timePosted: 'Hace 1 hora', timepostuled: 'Termina el 18-09-2025', modalidad: 'Remota', contrato: 'Término Indefinido', empresa: "Empresa: Codexia Tech Labs", description: "Experto en SQL, Python y Power BI, manejo de grandes volúmenes de datos." },
     { id: 3, name: 'Especialista QA', location: 'Cali, Valle', timePosted: 'Hace 2 días', timepostuled: 'Termina el 08-10-2025', modalidad: 'Presencial', contrato: 'Aprendiz', empresa: "Empresa: Lumitech Global", description: "Pruebas de software, automatización, metodologías ágiles." },
     { id: 4, name: 'Diseñador UX/UI', location: 'Barranquilla, Atlántico', timePosted: 'Hace 3 días', timepostuled: 'Termina el 20-11-2025', modalidad: 'Presencial', contrato: 'Prestación de Servicios', empresa: "Empresa: QuantumEdge Systems", description: "Experiencia con Figma, Sketch, Adobe XD, prototipado." },
@@ -24,6 +24,8 @@ const AspirantePage = () => {
 
   const filteredJobListings = generalQuery
     ? allJobListings.filter(job =>
+        job.salary.toLowerCase().includes(generalQuery)||
+        job.salary.toLowerCase().includes(generalQuery)||
         job.name.toLowerCase().includes(generalQuery) ||
         job.description.toLowerCase().includes(generalQuery) ||
         job.location.toLowerCase().includes(generalQuery) ||
@@ -192,13 +194,12 @@ const AspirantePage = () => {
           <section className="section-details-panel">
             {selectedJob ? (
               <div className="div-job-detail-content">
-                <h2 className="h2-job-detail-title">Detalle de {selectedJob.name}</h2>
+                <h2 className="h2-job-detail-title">{selectedJob.name}</h2>
+                <p className="p-job-detail-empresa"> <p>{selectedJob.empresa}</p></p>
+                <p className="p-job-detail-location">{selectedJob.location}</p>
+                <p className="p-job-detail-salary">{selectedJob.salary} (Mensual)</p>
                 <p className="p-job-detail-contrato">Contrato: {selectedJob.contrato}</p>
-                <p className="p-job-detail-empresa">Empresa{selectedJob.empresa}</p>
-                <p className="p-job-detail-location">Ubicación: {selectedJob.location}</p>
-                <p className="p-job-detail-time">Publicado: {selectedJob.timePosted}</p>
-                <p className="p-job-detail-postuled">Termina: {selectedJob.timepostuled}</p>
-                <p className="p-job-detail-modalidad">Modalidad: {selectedJob.modalidad}</p>
+                <p className="p-job-detail-fulltime">{selectedJob.fulltime}</p>
                 <p className="p-job-detail-description">
                   {selectedJob.description}
                 </p>
