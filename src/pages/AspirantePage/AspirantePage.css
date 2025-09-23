@@ -115,24 +115,26 @@
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
-
 .section-filter-buttons {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
   padding: 0.5rem;
+  margin-left: 4px;
   gap: 0.5rem;
   margin-bottom: 0.5rem;
+  border-bottom: none;
 }
 
 .button-filter-dropdown {
   background-color: #fff;
-  border: 1px solid #2b14ad;
+  border: 1px solid #3a4856cc;
+  box-shadow: 0 0 3px rgba(48, 48, 48, 0.2);
   border-radius: 10px;
   cursor: pointer;
   padding: 0.5rem 1rem;
   font-size: 0.9rem;
-  color: #2b14ad;
+  color: #3A4856;
   white-space: nowrap;
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
@@ -145,21 +147,21 @@
 
 .section-job-panels {
   display: grid;
-  grid-template-columns: 1fr 2fr; 
+  grid-template-columns: 1fr 2fr;
   gap: 1rem;
   padding: 1rem 0;
 }
 
 .section-listings-panel {
-  background-color: #fff;
   padding: 1rem;
   max-height: 80vh;
   overflow-y: auto;
   border-radius: 8px;
-  border: 1px solid #ddd;
   display: flex;
   flex-direction: column;
+  margin-left: 10px;
 }
+
 
 .nav-job-categories {
   background-color: #fff;
@@ -167,8 +169,17 @@
   padding: 1rem;
   margin-bottom: 1rem;
   border-radius: 6px;
+  border: 1px solid #3d3d3d4b;
+}
+
+.nav-job-categories p {
+  color: #3a3939;
+  font-size: large;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
 }
 
 .div-job-cards-grid {
@@ -184,6 +195,7 @@
   padding: 1rem;
   cursor: pointer;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 7px 7px 0 rgba(0, 0, 0, 0.1);
 }
 
 .div-job-card:hover {
@@ -284,7 +296,7 @@
 }
 
 .section-details-panel {
-  background-color: #f8f8f8;
+  background-color: #fff;
   padding: 1rem;
   max-height: 80vh;
   overflow-y: auto;

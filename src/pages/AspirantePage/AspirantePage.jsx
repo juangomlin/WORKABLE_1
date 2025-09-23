@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
 import './AspirantePage.css';
+import Header from '../../components/Header/Header';
+import HeaderReclutador from '../../components/HeaderReclutador/HeaderReclutador'
 
 const AspirantePage = () => {
   const location = useLocation();
@@ -35,23 +35,121 @@ const AspirantePage = () => {
 
   return (
     <>
-      <Header />
+      <HeaderReclutador/>
       <main className="main-aspirant-page">
         <section className="section-filter-buttons">
-          <button className="button-filter-dropdown">Ordenar ⌄</button>
-          <button className="button-filter-dropdown">Distancia ⌄</button>
-          <button className="button-filter-dropdown">Fecha ⌄</button>
-          <button className="button-filter-dropdown">Lugar de trabajo ⌄</button>
-          <button className="button-filter-dropdown">Experiencia ⌄</button>
-          <button className="button-filter-dropdown">Salario ⌄</button>
-          <button className="button-filter-dropdown">Jornada ⌄</button>
-          <button className="button-filter-dropdown">Contrato ⌄</button>
-          <button className="button-filter-dropdown">Discapacidad ⌄</button>
+          <button className="button-filter-dropdown">Ordenar
+          <svg
+          style={{ marginLeft: 6, verticalAlign: 'middle' }}
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          >
+          <path d="M4 6L8 10L12 6" stroke="#3A4856" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg></button>
+          <button className="button-filter-dropdown">Distancia
+            <svg
+          style={{ marginLeft: 6, verticalAlign: 'middle' }}
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          >
+          <path d="M4 6L8 10L12 6" stroke="#3A4856" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          </button>
+          <button className="button-filter-dropdown">Fecha
+            <svg
+          style={{ marginLeft: 6, verticalAlign: 'middle' }}
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          >
+          <path d="M4 6L8 10L12 6" stroke="#3A4856" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          </button>
+          <button className="button-filter-dropdown">Lugar de trabajo
+            <svg
+          style={{ marginLeft: 6, verticalAlign: 'middle' }}
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          >
+          <path d="M4 6L8 10L12 6" stroke="#3A4856" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          </button>
+          <button className="button-filter-dropdown">Experiencia
+            <svg
+          style={{ marginLeft: 6, verticalAlign: 'middle' }}
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          >
+          <path d="M4 6L8 10L12 6" stroke="#3A4856" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          </button>
+          <button className="button-filter-dropdown">Salario
+            <svg
+          style={{ marginLeft: 6, verticalAlign: 'middle' }}
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          >
+          <path d="M4 6L8 10L12 6" stroke="#3A4856" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          </button>
+          <button className="button-filter-dropdown">Jornada
+            <svg
+          style={{ marginLeft: 6, verticalAlign: 'middle' }}
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          >
+          <path d="M4 6L8 10L12 6" stroke="#3A4856" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          </button>
+          <button className="button-filter-dropdown">Contrato
+            <svg
+          style={{ marginLeft: 6, verticalAlign: 'middle' }}
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          >
+          <path d="M4 6L8 10L12 6" stroke="#3A4856" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          </button>
+          <button className="button-filter-dropdown">Discapacidad
+            <svg
+          style={{ marginLeft: 6, verticalAlign: 'middle' }}
+          width="16"
+          height="16"
+          viewBox="0 0 16 16"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          >
+          <path d="M4 6L8 10L12 6" stroke="#3A4856" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+          </svg>
+          </button>
         </section>
 
         <section className="section-job-panels">
           <section className="section-listings-panel">
-            <nav className="nav-job-categories"><p>Busca tu trabajo deseado</p></nav>
+              <nav className="nav-job-categories"><p>Busca tu trabajo deseado</p></nav>
             <div className="div-job-cards-grid">
               {filteredJobListings.length > 0 ? (
                 filteredJobListings.map((job) => (
@@ -95,12 +193,12 @@ const AspirantePage = () => {
             {selectedJob ? (
               <div className="div-job-detail-content">
                 <h2 className="h2-job-detail-title">Detalle de {selectedJob.name}</h2>
+                <p className="p-job-detail-contrato">Contrato: {selectedJob.contrato}</p>
+                <p className="p-job-detail-empresa">Empresa{selectedJob.empresa}</p>
                 <p className="p-job-detail-location">Ubicación: {selectedJob.location}</p>
                 <p className="p-job-detail-time">Publicado: {selectedJob.timePosted}</p>
                 <p className="p-job-detail-postuled">Termina: {selectedJob.timepostuled}</p>
                 <p className="p-job-detail-modalidad">Modalidad: {selectedJob.modalidad}</p>
-                <p className="p-job-detail-contrato">Contrato: {selectedJob.contrato}</p>
-                <p className="p-job-detail-empresa">Empresa: {selectedJob.empresa}</p>
                 <p className="p-job-detail-description">
                   {selectedJob.description}
                 </p>
@@ -113,7 +211,6 @@ const AspirantePage = () => {
           </section>
         </section>
       </main>
-      <Footer />
     </>
   );
 };
