@@ -89,16 +89,20 @@ const SignUpPage = () => {
             {userType === 'reclutador' && (
               <>
                 <div className='form-reclutador-fields'>
-                  <input type='text' name='companyName' placeholder='Nombre de la Empresa' required className='input-signup' />
+                  <input type='text' name='companyName' placeholder='Nombre legal de la Empresa' required className='input-signup' />
                   <input type='text' name='legalName' placeholder='Razón Social' required className='input-signup' />
-                  <input type='text' name='nit' placeholder='NIT' required className='input-signup' />
-                  <input type='text' name='country' placeholder='País' required className='input-signup' />
+                  <input type='text' name='nit' placeholder='Numero de identificacion fiscal' required className='input-signup' />
+                  <input type='text' name='country' placeholder='Direccion fisica' required className='input-signup' />
                   <input type='text' name='cityOrZip' placeholder='Ciudad o Código Postal' required className='input-signup' />
                   <input type='text' name='sector' placeholder='Sector' required className='input-signup' />
-                  <input type='number' name='numWorkers' placeholder='Número de Trabajadores' required className='input-signup' />
-                  <input type='number' name='annualVacancies' placeholder='Vacantes Anuales Estimadas' required className='input-signup' />
-                  <input type='email' name='email' placeholder='Correo Electrónico (Contacto)' required className='input-signup' />
-                  <input type='password' name='password' placeholder='Contraseña' required className='input-signup' />
+                  <select name="workers" id="">
+                    <option value=''>Numero de trabajadores</option>
+                    <option value="pequeña">Entre 10 y 49 empleados</option>
+                    <option value="mediana">Entre 50 a 249 empleados</option>
+                    <option value="grande">Entre 250 y 500 o mas empleados</option>
+                  </select>
+                  <input type='date' name='dateCreate' placeholder='Fecha creacion' required className='input-signup' />
+                  <input type='email' name='email' placeholder='Correo corporativo' required className='input-signup' />
                 </div>
                 <button type='submit' className='button-submit'>Crear Cuenta Reclutador</button>
               </>
