@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import './AspirantePage.css';
-import Header from '../../components/Header/Header';
 import HeaderReclutador from '../../components/HeaderReclutador/HeaderReclutador'
+import Buttons  from '../../components/Buttons/Buttons';
+
 
 const AspirantePage = () => {
   const location = useLocation();
@@ -197,6 +198,7 @@ const AspirantePage = () => {
                 <h2 className="h2-job-detail-title">{selectedJob.name}</h2>
                 <p className="p-job-detail-empresa"> <p>{selectedJob.empresa}</p></p>
                 <p className="p-job-detail-location">{selectedJob.location}</p>
+                <Buttons></Buttons>
                 <p className="p-job-detail-salary">{selectedJob.salary} (Mensual)</p>
                 <p className="p-job-detail-contrato">Contrato: {selectedJob.contrato}</p>
                 <p className="p-job-detail-fulltime">{selectedJob.fulltime}</p>
