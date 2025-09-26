@@ -41,7 +41,11 @@ const AspirantePage = () => {
       <HeaderReclutador/>
       <main className="main-aspirant-page">
         <section className="section-filter-buttons">
-          <button className="button-filter-dropdown">Ordenar
+          <select name="button-filter-dropdown" required className='dropdown-button'>
+          <option value=''>Ordenar por</option>
+          <option value='relevancia'>Relevancia</option>
+          <option value='fecha'>Fecha</option>
+          <option value='salario'>Salario</option>
           <svg
           style={{ marginLeft: 6, verticalAlign: 'middle' }}
           width="16"
@@ -51,7 +55,8 @@ const AspirantePage = () => {
           xmlns="http://www.w3.org/2000/svg"
           >
           <path d="M4 6L8 10L12 6" stroke="#3A4856" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg></button>
+          </svg>
+          </select>
           <button className="button-filter-dropdown">Distancia
             <svg
           style={{ marginLeft: 6, verticalAlign: 'middle' }}
