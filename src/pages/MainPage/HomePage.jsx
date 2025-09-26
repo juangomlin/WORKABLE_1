@@ -43,6 +43,7 @@ const HomePage = () => {
           </div>
         </section>
 
+
         <section className='section-publish'>
           <a href="" className='link-to-publish'><Link to="/Reclutador/reclutamiento" className="links">
           <div className='div-publish'>
@@ -110,6 +111,7 @@ const HomePage = () => {
 
 
         
+
         <section className='section-applicant'>
           <div className="img-applicant">
             <img src="https://i.postimg.cc/htsSQDKG/image.png" alt="appl" className='img-ap-link' />
@@ -123,8 +125,12 @@ const HomePage = () => {
                 aplica a ofertas de empresas comprometidas con la inclusión</p>
             </div>
           </div>
-          <Link to="/SignUp" className='link-companies-mp'>Crear Cuenta</Link>
+          <button className='button-section-applicant'>
+              <Link to="/SignUp" className='link-companies-mp'>Crear Cuenta</Link>
+          </button>
         </section>
+
+        
 
         <section className="section-bussines">
           <h2 className="h2-title">Publica tu vacante</h2>
