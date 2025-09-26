@@ -6,7 +6,7 @@ export default function Buttons() {
 		<div className="container-buttons">
                 <button className="job-apply">Aplicar</button>
                 <div className="buttons">
-                    <button className="button-icon">
+                    <button className="button-icon" onClick={() => setSeñe}>
                         <Heart className="text-blue-600 w-6 h-6"></Heart>
                     </button>
                     <button className="button-icon">

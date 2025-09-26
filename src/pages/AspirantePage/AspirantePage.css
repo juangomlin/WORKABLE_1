@@ -93,6 +93,7 @@
 .name {
   color: #2541a0;
 }
+
 .search-seccion {
   display: flex;
   align-items: center;
@@ -150,6 +151,7 @@
   grid-template-columns: 1fr 2fr;
   gap: 1rem;
   padding: 1rem 0;
+  margin-left: 230px;
 }
 
 .section-listings-panel {
@@ -159,7 +161,6 @@
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  margin-left: 10px;
 }
 
 
@@ -296,13 +297,15 @@
 }
 
 .section-details-panel {
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.1);;
   background-color: #fff;
   padding: 1rem;
   max-height: 80vh;
   overflow-y: auto;
   border-radius: 8px;
   border: 1px solid #ddd;
-  margin: 10px;
+  margin-left: px;
+  width: 75vh;
 }
 
 .h2-job-detail-title {

@@ -169,18 +169,6 @@ const AspirantePage = () => {
                     <p className="p-contrato">{job.contrato}</p>
                     <p className="p-empresa">{job.empresa}</p>
                     <div className="div-job-card-actions">
-                      <button
-                        className="button-apply"
-                        onClick={(e) => { e.stopPropagation(); alert(`Te has postulado a: ${job.name}`); }}
-                      >
-                        Postularme
-                      </button>
-                      <button
-                        className="button-save"
-                        onClick={(e) => { e.stopPropagation(); alert(`Has guardado la oferta: ${job.name}`); }}
-                      >
-                        Guardar
-                      </button>
                     </div>
                   </div>
                 ))
