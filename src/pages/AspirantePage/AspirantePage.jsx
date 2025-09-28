@@ -3,6 +3,7 @@ import { useLocation, Link } from 'react-router-dom';
 import './AspirantePage.css';
 import HeaderReclutador from '../../components/HeaderReclutador/HeaderReclutador'
 import Buttons  from '../../components/Buttons/Buttons';
+import Dropdown from '../../components/Dropdown/Dropdown';
 
 
 const AspirantePage = () => {
@@ -36,124 +37,29 @@ const AspirantePage = () => {
       )
     : allJobListings;
 
+    document.querySelectorAll('.dropdown-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+    const menu = this.nextElementSibling;
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+
   return (
     <>
       <HeaderReclutador/>
       <main className="main-aspirant-page">
-        <section className="section-filter-buttons">
-          <select name="button-filter-dropdown" required className='dropdown-button'>
-          <option value=''>Ordenar por</option>
-          <option value='relevancia'>Relevancia</option>
-          <option value='fecha'>Fecha</option>
-          <option value='salario'>Salario</option>
-          <svg
-          style={{ marginLeft: 6, verticalAlign: 'middle' }}
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          >
-          <path d="M4 6L8 10L12 6" stroke="#3A4856" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          </select>
-          <button className="button-filter-dropdown">Distancia
-            <svg
-          style={{ marginLeft: 6, verticalAlign: 'middle' }}
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          >
-          <path d="M4 6L8 10L12 6" stroke="#3A4856" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          </button>
-          <button className="button-filter-dropdown">Fecha
-            <svg
-          style={{ marginLeft: 6, verticalAlign: 'middle' }}
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          >
-          <path d="M4 6L8 10L12 6" stroke="#3A4856" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          </button>
-          <button className="button-filter-dropdown">Lugar de trabajo
-            <svg
-          style={{ marginLeft: 6, verticalAlign: 'middle' }}
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          >
-          <path d="M4 6L8 10L12 6" stroke="#3A4856" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          </button>
-          <button className="button-filter-dropdown">Experiencia
-            <svg
-          style={{ marginLeft: 6, verticalAlign: 'middle' }}
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          >
-          <path d="M4 6L8 10L12 6" stroke="#3A4856" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          </button>
-          <button className="button-filter-dropdown">Salario
-            <svg
-          style={{ marginLeft: 6, verticalAlign: 'middle' }}
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          >
-          <path d="M4 6L8 10L12 6" stroke="#3A4856" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          </button>
-          <button className="button-filter-dropdown">Jornada
-            <svg
-          style={{ marginLeft: 6, verticalAlign: 'middle' }}
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          >
-          <path d="M4 6L8 10L12 6" stroke="#3A4856" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          </button>
-          <button className="button-filter-dropdown">Contrato
-            <svg
-          style={{ marginLeft: 6, verticalAlign: 'middle' }}
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          >
-          <path d="M4 6L8 10L12 6" stroke="#3A4856" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          </button>
-          <button className="button-filter-dropdown">Discapacidad
-            <svg
-          style={{ marginLeft: 6, verticalAlign: 'middle' }}
-          width="16"
-          height="16"
-          viewBox="0 0 16 16"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          >
-          <path d="M4 6L8 10L12 6" stroke="#3A4856" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-          </svg>
-          </button>
-        </section>
+
+    <div className='dropdown-buttons'>
+      <Dropdown label="Ordenar" options={["Relevancia", "Fecha", "Salario"]} />
+      <Dropdown label="Distancia" options={["Hasta 5 km", "Hasta 10 km", "Hasta 25 km"]} />
+      <Dropdown label="Fecha" options={["Urgente", "Hoy", "Ultimos 3 dias"]} />
+      <Dropdown label="Categoria" options={["Administracion", "Contabilidad, Finanzas", "Ventas"]}></Dropdown>
+      <Dropdown label="Lugar de trabajo" options={["Bogota"]}></Dropdown>
+      <Dropdown label="Experiencia" options={["Sin experiencia", "1 año", "2 años"]}></Dropdown>
+      <Dropdown label="Salario" options={["Menos de 700.000", "Mas de 700.000", "Mas de 1.000.000"]}></Dropdown>
+      <Dropdown label="Jornada" options={["Tiempo completo", "Tiempo parcial"]}></Dropdown>
+      <Dropdown label="Contrato" options={["Contrato a termino indefinido", "Contrato de obra o labor", "Contrato a termino fijo"]}></Dropdown>
+    </div>
 
         <section className="section-job-panels">
           <section className="section-listings-panel">
