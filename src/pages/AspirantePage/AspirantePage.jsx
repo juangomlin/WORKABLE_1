@@ -6,6 +6,7 @@ import Buttons  from '../../components/Buttons/Buttons';
 import Dropdown from '../../components/Dropdown/Dropdown';
 
 
+
 const AspirantePage = () => {
   const location = useLocation();
   const [selectedJob, setSelectedJob] = useState(null);
