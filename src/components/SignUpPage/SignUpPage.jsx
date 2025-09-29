@@ -53,15 +53,13 @@ const SignUpPage = () => {
             {userType === 'aspirante' && (
                 <>
                   <div className='form-reclutador-fields'>
-                    <input type='text' name='fullName' placeholder='Primer Nombre' required className='input-signup' />
-                    <input type='text' name='fullName' placeholder='Segundo Nombre' required className='input-signup' />
-                    <input type='text' name='fullName' placeholder='Primer Apellido' required className='input-signup' />
-                    <input type='text' name='fullName' placeholder='Segundo Apellido' required className='input-signup' />
+                    <input type='text' name='fullName' placeholder='Nombre' required className='input-signup' />
+                    <input type='text' name='fullName' placeholder='Apellido' required className='input-signup' />
+                    <input type='text' name='email' placeholder='Correo electronico' required className='input-signup' />
+                    <input type='text' name='direction' placeholder='Ubicacion' required className='input-signup' />
                     <input type='tel' name='phone' placeholder='Número de Teléfono' required className='input-signup' />
-                    <input type='email' name='email' placeholder='Correo Electrónico' required className='input-signup' />
-                    <input type='password' name='password' placeholder='Contraseña' required className='input-signup' />
-                    <input type='text' name='direction' placeholder='Dirección' required className='input-signup' />
                     <input type='date' name='nacimiento' placeholder='Fecha de Nacimiento' required className='input-signup' />
+                    <input type='password' name='password' placeholder='Contraseña' required className='input-signup' />
                     <select name='gender' required className='input-signup'>
                       <option value=''>Selecciona tu género</option>
                       <option value='masculino'>Masculino</option>
