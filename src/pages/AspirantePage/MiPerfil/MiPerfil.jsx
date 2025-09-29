@@ -1,7 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { FaUser, FaBriefcase, FaWheelchair } from 'react-icons/fa';
-import Footer from "../../../components/Footer/Footer";
 import './MiPerfil.css';
 
 const MiPerfil = () => {
@@ -58,7 +57,6 @@ const MiPerfil = () => {
           </button>
         </section>
       </main>
-      <Footer />
     </>
   );
 };
