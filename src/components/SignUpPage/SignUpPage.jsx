@@ -79,6 +79,14 @@ const SignUpPage = () => {
                     </select>
                     <input type='text' name='discapacidad' placeholder='Discapacidad' required className='input-signup' />
                   </div>
+                  <select name='documentType' required className='input-signup'>
+                      <option value=''>Ciudad</option>
+                      <option value='Municipio'>Cali</option>
+                      <option value='Municipio'>Medellin</option>
+                      <option value="Municipio">Bogota</option>
+                      <option value="Municipio">Barranquilla</option>
+                      <option value="Municipio">Cartagena</option>
+                    </select>
                   <button type='submit' className='button-submit'>Crear Cuenta Aspirante</button>
                 </>
               )}
@@ -112,7 +120,6 @@ const SignUpPage = () => {
           </p>
         </div>
       </main>
-      <Footer />
     </>
   );
 };
