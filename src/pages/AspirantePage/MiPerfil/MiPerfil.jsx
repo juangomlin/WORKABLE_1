@@ -19,35 +19,7 @@ const MiPerfil = () => {
 
   return (
     <>
-      <main className="perfil-container">
-        <section className="perfil-card">
-          <h2 className="perfil-title">Mi Perfil</h2>
-          <div className="perfil-grid">
-            
-            <div className="perfil-section">
-              <h3 className="perfil-subtitle"><FaUser /> Datos Básicos</h3>
-              <p><strong>Nombre:</strong> {aspirante.nombre}</p>
-              <p><strong>Correo:</strong> {aspirante.correo}</p>
-              <p><strong>Teléfono:</strong> {aspirante.telefono}</p>
-              <p><strong>Ciudad:</strong> {aspirante.ciudad}</p>
-            </div>
-            <div className="perfil-section">
-              <h3 className="perfil-subtitle"><FaBriefcase /> Experiencia & Habilidades</h3>
-              <p><strong>Experiencia:</strong> {aspirante.experiencia}</p>
-              <p><strong>Empresa actual:</strong> {aspirante.empresaActual}</p>
-              <strong>Habilidades:</strong>
-              <ul>
-                {aspirante.habilidades.map((hab, idx) => (
-                  <li key={idx}>{hab}</li>
-                ))}
-              </ul>
-            </div>
-            <div className="perfil-section">
-              <h3 className="perfil-subtitle"><FaWheelchair /> Discapacidad</h3>
-              <p>{aspirante.discapacidad}</p>
-            </div>
-
-          </div>
+      
 
           <button 
             className="perfil-button"
@@ -55,8 +27,7 @@ const MiPerfil = () => {
           >
             Volver al inicio
           </button>
-        </section>
-      </main>
+
     </>
   );
 };
