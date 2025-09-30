@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Header from '../../components/Header/Header';
 import Footer from '../Footer/Footer';
 import './SignUpPage.css';
+import { crearAspirante } from '../../api/aspirantesApi';
 
 const SignUpPage = () => {
   const [userType, setUserType] = useState('aspirante');
@@ -16,13 +17,29 @@ const SignUpPage = () => {
     setUserType(type);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (userType === 'reclutador') {
+  if (userType === 'aspirante') {
+      const formData = new FormData(event.target);
+      const data = Object.fromEntries(formData.entries());
+
+    data.tel = Number(data.tel);
+    data.tipDoc_id = Number(data.tipDoc_id);
+    data.munici_id = Number(data.munici_id);
+    data.genero_id = Number(data.genero_id);
+    data.numeroID = Number(data.numeroID);
+
+      try{
+        const aspiranteCreado = await crearAspirante(data);
+        console.log("✅ Aspirante creado:", aspiranteCreado);
+        navigate('/Aspirante')
+      }catch (error){
+        console.error("❌ Error al crear aspirante:", error.message);
+        alert("Error: " +  + error.message);
+      }
+    }else if (userType === 'reclutador') {
       navigate('/Reclutador');
-    } else if (userType === 'aspirante') {
-      navigate('/Aspirante');
     }
   };
 
@@ -53,40 +70,47 @@ const SignUpPage = () => {
             {userType === 'aspirante' && (
                 <>
                   <div className='form-reclutador-fields'>
-                    <input type='text' name='fullName' placeholder='Nombre' required className='input-signup' />
-                    <input type='text' name='fullName' placeholder='Apellido' required className='input-signup' />
-                    <input type='text' name='email' placeholder='Correo electronico' required className='input-signup' />
-                    <input type='text' name='direction' placeholder='Ubicacion' required className='input-signup' />
-                    <input type='tel' name='phone' placeholder='Número de Teléfono' required className='input-signup' />
-                    <input type='date' name='nacimiento' placeholder='Fecha de Nacimiento' required className='input-signup' />
-                    <input type='password' name='password' placeholder='Contraseña' required className='input-signup' />
-                    <select name='gender' required className='input-signup'>
+                    <input type='text' name='nom' placeholder='Nombre' required className='input-signup' />
+                    <input type='text' name='ape' placeholder='Apellido' required className='input-signup' />
+
+                    {/* Correo y Ubicación */}
+                    <input type='email' name='corr' placeholder='Correo electrónico' required className='input-signup' />
+                    <input type='text' name='ubi' placeholder='Ubicación' required className='input-signup' />
+
+                    {/* Teléfono y Fecha de nacimiento */}
+                    <input type='tel' name='tel' placeholder='Número de Teléfono' required className='input-signup' />
+                    <input type='date' name='feNa' placeholder='Fecha de Nacimiento' required className='input-signup' />
+
+                    {/* Contraseña */}
+                    <input type='password' name='cla' placeholder='Contraseña' required className='input-signup' />
+
+                    {/* Género (usa IDs numéricos que correspondan en tu DB) */}
+                    <select name='genero_id' required className='input-signup'>
                       <option value=''>Selecciona tu género</option>
-                      <option value='masculino'>Masculino</option>
-                      <option value='femenino'>Femenino</option>
+                      <option value='1'>Masculino</option>
+                      <option value='2'>Femenino</option>
                     </select>
-                    <select name='documentType' required className='input-signup'>
+
+                    {/* Tipo de documento (usa IDs numéricos que correspondan en tu DB) */}
+                    <select name='tipDoc_id' required className='input-signup'>
                       <option value=''>Tipo de Documento</option>
-                      <option value='Cedula'>CC</option>
-                      <option value='Tarjeta de Identidad'>TI</option>
+                      <option value='1'>CC</option>
+                      <option value='2'>TI</option>
                     </select>
+
+                    {/* Número de Documento */}
                     <input type="number" name="numeroID" placeholder="Número de Documento" required className="input-signup" min="0" step="1" />
-                    <select name='discapacidadTipo' required className='input-signup'>
-                      <option value=''>Tipo de Discapacidad</option>
-                      <option value='Visual'>Visual</option>
-                      <option value='Sordera'>Sordera</option>
-                      <option value='Motora'>Motora</option>
-                    </select>
-                    <input type='text' name='discapacidad' placeholder='Discapacidad' required className='input-signup' />
-                  </div>
-                  <select name='documentType' required className='input-signup'>
+
+                    {/* Ciudad (municipio, usa IDs de tu DB) */}
+                    <select name='munici_id' required className='input-signup'>
                       <option value=''>Ciudad</option>
-                      <option value='Municipio'>Cali</option>
-                      <option value='Municipio'>Medellin</option>
-                      <option value="Municipio">Bogota</option>
-                      <option value="Municipio">Barranquilla</option>
-                      <option value="Municipio">Cartagena</option>
+                      <option value='1'>Cali</option>
+                      <option value='2'>Medellín</option>
+                      <option value='3'>Bogotá</option>
+                      <option value='4'>Barranquilla</option>
+                      <option value='5'>Cartagena</option>
                     </select>
+                  </div>
                   <button type='submit' className='button-submit'>Crear Cuenta Aspirante</button>
                 </>
               )}
