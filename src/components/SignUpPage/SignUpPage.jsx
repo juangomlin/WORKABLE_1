@@ -53,15 +53,13 @@ const SignUpPage = () => {
             {userType === 'aspirante' && (
                 <>
                   <div className='form-reclutador-fields'>
-                    <input type='text' name='fullName' placeholder='Primer Nombre' required className='input-signup' />
-                    <input type='text' name='fullName' placeholder='Segundo Nombre' required className='input-signup' />
-                    <input type='text' name='fullName' placeholder='Primer Apellido' required className='input-signup' />
-                    <input type='text' name='fullName' placeholder='Segundo Apellido' required className='input-signup' />
+                    <input type='text' name='fullName' placeholder='Nombre' required className='input-signup' />
+                    <input type='text' name='fullName' placeholder='Apellido' required className='input-signup' />
+                    <input type='text' name='email' placeholder='Correo electronico' required className='input-signup' />
+                    <input type='text' name='direction' placeholder='Ubicacion' required className='input-signup' />
                     <input type='tel' name='phone' placeholder='Número de Teléfono' required className='input-signup' />
-                    <input type='email' name='email' placeholder='Correo Electrónico' required className='input-signup' />
-                    <input type='password' name='password' placeholder='Contraseña' required className='input-signup' />
-                    <input type='text' name='direction' placeholder='Dirección' required className='input-signup' />
                     <input type='date' name='nacimiento' placeholder='Fecha de Nacimiento' required className='input-signup' />
+                    <input type='password' name='password' placeholder='Contraseña' required className='input-signup' />
                     <select name='gender' required className='input-signup'>
                       <option value=''>Selecciona tu género</option>
                       <option value='masculino'>Masculino</option>
@@ -81,6 +79,14 @@ const SignUpPage = () => {
                     </select>
                     <input type='text' name='discapacidad' placeholder='Discapacidad' required className='input-signup' />
                   </div>
+                  <select name='documentType' required className='input-signup'>
+                      <option value=''>Ciudad</option>
+                      <option value='Municipio'>Cali</option>
+                      <option value='Municipio'>Medellin</option>
+                      <option value="Municipio">Bogota</option>
+                      <option value="Municipio">Barranquilla</option>
+                      <option value="Municipio">Cartagena</option>
+                    </select>
                   <button type='submit' className='button-submit'>Crear Cuenta Aspirante</button>
                 </>
               )}
@@ -89,16 +95,20 @@ const SignUpPage = () => {
             {userType === 'reclutador' && (
               <>
                 <div className='form-reclutador-fields'>
-                  <input type='text' name='companyName' placeholder='Nombre de la Empresa' required className='input-signup' />
+                  <input type='text' name='companyName' placeholder='Nombre legal de la Empresa' required className='input-signup' />
                   <input type='text' name='legalName' placeholder='Razón Social' required className='input-signup' />
-                  <input type='text' name='nit' placeholder='NIT' required className='input-signup' />
-                  <input type='text' name='country' placeholder='País' required className='input-signup' />
+                  <input type='text' name='nit' placeholder='Numero de identificacion fiscal' required className='input-signup' />
+                  <input type='text' name='country' placeholder='Direccion fisica' required className='input-signup' />
                   <input type='text' name='cityOrZip' placeholder='Ciudad o Código Postal' required className='input-signup' />
                   <input type='text' name='sector' placeholder='Sector' required className='input-signup' />
-                  <input type='number' name='numWorkers' placeholder='Número de Trabajadores' required className='input-signup' />
-                  <input type='number' name='annualVacancies' placeholder='Vacantes Anuales Estimadas' required className='input-signup' />
-                  <input type='email' name='email' placeholder='Correo Electrónico (Contacto)' required className='input-signup' />
-                  <input type='password' name='password' placeholder='Contraseña' required className='input-signup' />
+                  <select name="workers" id="">
+                    <option value=''>Numero de trabajadores</option>
+                    <option value="pequeña">Entre 10 y 49 empleados</option>
+                    <option value="mediana">Entre 50 a 249 empleados</option>
+                    <option value="grande">Entre 250 y 500 o mas empleados</option>
+                  </select>
+                  <input type='date' name='dateCreate' placeholder='Fecha creacion' required className='input-signup' />
+                  <input type='email' name='email' placeholder='Correo corporativo' required className='input-signup' />
                 </div>
                 <button type='submit' className='button-submit'>Crear Cuenta Reclutador</button>
               </>
@@ -110,7 +120,6 @@ const SignUpPage = () => {
           </p>
         </div>
       </main>
-      <Footer />
     </>
   );
 };
