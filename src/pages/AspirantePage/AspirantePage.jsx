@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import './AspirantePage.css';
-import HeaderReclutador from '../../components/HeaderReclutador/HeaderReclutador'
+import HeaderAspirant from '../../components/HeaderAspirant/HeaderAspirant'
 import Buttons  from '../../components/Buttons/Buttons';
 import Dropdown from '../../components/Dropdown/Dropdown';
 
@@ -47,7 +47,7 @@ const AspirantePage = () => {
 
   return (
     <>
-      <HeaderReclutador/>
+      <HeaderAspirant/>
       <main className="main-aspirant-page">
 
     <div className='dropdown-buttons'>
