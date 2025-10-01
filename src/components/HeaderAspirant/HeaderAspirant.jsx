@@ -19,13 +19,13 @@ const HeaderAspirant = () => {
       <div className="header-center">
         <div className="job-search-bar">
           <div className="search-section">
-            <FaBriefcase className="search-icon" color='white'/>
+            <FaBriefcase className="search-icon" color='#2541a0'/>
             <input type="text" className='input-text' placeholder="Cargo" />
           </div>
           <div className="divider" />
           <div className="search-section">
-            <FaMapMarkerAlt className="search-icon" color='white' />
-            <input type="text" className='input-text' placeholder='Ciudad' color='white' />
+            <FaMapMarkerAlt className="search-icon" color='#2541a0' />
+            <input type="text" className='input-text' placeholder='Ciudad' />
           </div>
             <FaSearch color='white' />
         </div>

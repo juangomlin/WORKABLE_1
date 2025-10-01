@@ -41,7 +41,7 @@
   border: 2px solid #ddd;
   border-radius: 50px;
   padding: 1px 16px;
-  background: none;
+  background: #ffff;
   box-shadow: 0 0 5px rgba(0,0,0,0.1);
   max-width: 450px;
   width: 100%;
@@ -52,8 +52,8 @@
   align-items: center;
 }
 
-.search-section input {
-  height: 1px;
+.search-section input.input-text {
+  height: 9px;
   border: none;
   outline: none;
   font-size: 14px;
