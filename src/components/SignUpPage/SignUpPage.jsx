@@ -28,19 +28,30 @@ const SignUpPage = () => {
     data.tipDoc_id = Number(data.tipDoc_id);
     data.munici_id = Number(data.munici_id);
     data.genero_id = Number(data.genero_id);
-    data.numeroID = Number(data.numeroID);
+    data.numDoc = Number(data.numDoc);
 
-      try{
-        const aspiranteCreado = await crearAspirante(data);
-        console.log("✅ Aspirante creado:", aspiranteCreado);
-        navigate('/Aspirante')
-      }catch (error){
-        console.error("❌ Error al crear aspirante:", error.message);
-        alert("Error: " +  + error.message);
-      }
-    }else if (userType === 'reclutador') {
-      navigate('/Reclutador');
+    if (
+      isNaN(data.tel) ||
+      isNaN(data.tipDoc_id) ||
+      isNaN(data.munici_id) ||
+      isNaN(data.genero_id) ||
+      isNaN(data.numDoc)
+    ) {
+      alert("❌ Error al registrarse: datos inválidos");
+      return;
     }
+
+    try {
+      const aspiranteCreado = await crearAspirante(data);
+      console.log("✅ Aspirante creado:", aspiranteCreado);
+      navigate('/Aspirante');
+    } catch (error) {
+      console.error("❌ Error al crear aspirante:", error.message);
+      alert("❌ Error al registrarse: " + error.message);
+    }
+  } else if (userType === 'reclutador') {
+    navigate('/Reclutador');
+  }
   };
 
   return (
@@ -70,8 +81,8 @@ const SignUpPage = () => {
             {userType === 'aspirante' && (
                 <>
                   <div className='form-reclutador-fields'>
-                    <input type='text' name='nom' placeholder='Nombre' required className='input-signup' />
-                    <input type='text' name='ape' placeholder='Apellido' required className='input-signup' />
+                    <input type='text' name='nom' placeholder='Nombre' required className='input-signup' pattern="[A-Za-zÀ-ÿ\s]+" title="Solo se permiten letras y espacios" />
+                    <input type='text' name='ape' placeholder='Apellido' required className='input-signup'  pattern="[A-Za-zÀ-ÿ\s]+" title="Solo se permiten letras y espacios" />
 
                     {/* Correo y Ubicación */}
                     <input type='email' name='corr' placeholder='Correo electrónico' required className='input-signup' />
@@ -99,7 +110,7 @@ const SignUpPage = () => {
                     </select>
 
                     {/* Número de Documento */}
-                    <input type="number" name="numeroID" placeholder="Número de Documento" required className="input-signup" min="0" step="1" />
+                    <input type="number" name="numDoc" placeholder="Número de Documento" required className="input-signup" min="0" step="1" />
 
                     {/* Ciudad (municipio, usa IDs de tu DB) */}
                     <select name='munici_id' required className='input-signup'>
