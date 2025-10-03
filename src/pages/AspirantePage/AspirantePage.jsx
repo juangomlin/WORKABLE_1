@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import { useLocation, Link } from 'react-router-dom';
-import Header from '../../components/Header/Header';
-import Footer from '../../components/Footer/Footer';
 import './AspirantePage.css';
-import HeaderAspirant from '../../components/HeaderAspirant/HeaderAspirant';
+import HeaderAspirant from '../../components/HeaderAspirant/HeaderAspirant'
+import Buttons  from '../../components/Buttons/Buttons';
+import Dropdown from '../../components/Dropdown/Dropdown';
+
+
 
 const AspirantePage = () => {
   const location = useLocation();
   const [selectedJob, setSelectedJob] = useState(null);
 
   const allJobListings = [
-    { id: 1, name: 'Desarrollador Frontend', location: 'Medellín, Antioquia', timePosted: 'Hace 11 minutos', timepostuled: 'Termina el 28-08-2025', modalidad: 'Presencial', contrato: 'Término Fijo', empresa: "Empresa: Nexabyte Solutions", description: "Buscamos desarrollador frontend con experiencia en React y CSS, JavaScript, HTML." },
+    { id: 1, name: 'Desarrollador Frontend', location: 'Medellín, Antioquia', timePosted: 'Hace 11 minutos', timepostuled: 'Termina el 28-08-2025', modalidad: 'Presencial', contrato: 'Término Fijo', empresa: "Empresa: Nexabyte Solutions", description: "Estamos en la búsqueda de un desarrollador frontend con experiencia en React, CSS, JavaScript y HTML. La persona ideal debe ser capaz de construir interfaces modernas, dinámicas y responsivas, trabajar en equipo con diseñadores y backend, y aportar ideas que mejoren la experiencia del usuario. Valoramos la atención al detalle, la creatividad y la capacidad de transformar requerimientos en soluciones funcionales y atractivas.s", salary: "2.500.000", fulltime: "Tiempo Completo"},
     { id: 2, name: 'Analista de Datos', location: 'Bogotá, Cundinamarca', timePosted: 'Hace 1 hora', timepostuled: 'Termina el 18-09-2025', modalidad: 'Remota', contrato: 'Término Indefinido', empresa: "Empresa: Codexia Tech Labs", description: "Experto en SQL, Python y Power BI, manejo de grandes volúmenes de datos." },
     { id: 3, name: 'Especialista QA', location: 'Cali, Valle', timePosted: 'Hace 2 días', timepostuled: 'Termina el 08-10-2025', modalidad: 'Presencial', contrato: 'Aprendiz', empresa: "Empresa: Lumitech Global", description: "Pruebas de software, automatización, metodologías ágiles." },
     { id: 4, name: 'Diseñador UX/UI', location: 'Barranquilla, Atlántico', timePosted: 'Hace 3 días', timepostuled: 'Termina el 20-11-2025', modalidad: 'Presencial', contrato: 'Prestación de Servicios', empresa: "Empresa: QuantumEdge Systems", description: "Experiencia con Figma, Sketch, Adobe XD, prototipado." },
@@ -25,6 +27,8 @@ const AspirantePage = () => {
 
   const filteredJobListings = generalQuery
     ? allJobListings.filter(job =>
+        job.salary.toLowerCase().includes(generalQuery)||
+        job.salary.toLowerCase().includes(generalQuery)||
         job.name.toLowerCase().includes(generalQuery) ||
         job.description.toLowerCase().includes(generalQuery) ||
         job.location.toLowerCase().includes(generalQuery) ||
@@ -34,25 +38,33 @@ const AspirantePage = () => {
       )
     : allJobListings;
 
+    document.querySelectorAll('.dropdown-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+    const menu = this.nextElementSibling;
+    menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+    });
+  });
+
   return (
     <>
       <HeaderAspirant/>
       <main className="main-aspirant-page">
-        <section className="section-filter-buttons">
-          <button className="button-filter-dropdown">Ordenar ⌄</button>
-          <button className="button-filter-dropdown">Distancia ⌄</button>
-          <button className="button-filter-dropdown">Fecha ⌄</button>
-          <button className="button-filter-dropdown">Lugar de trabajo ⌄</button>
-          <button className="button-filter-dropdown">Experiencia ⌄</button>
-          <button className="button-filter-dropdown">Salario ⌄</button>
-          <button className="button-filter-dropdown">Jornada ⌄</button>
-          <button className="button-filter-dropdown">Contrato ⌄</button>
-          <button className="button-filter-dropdown">Discapacidad ⌄</button>
-        </section>
+
+    <div className='dropdown-buttons'>
+      <Dropdown label="Ordenar" options={["Relevancia", "Fecha", "Salario"]} />
+      <Dropdown label="Distancia" options={["Hasta 5 km", "Hasta 10 km", "Hasta 25 km"]} />
+      <Dropdown label="Fecha" options={["Urgente", "Hoy", "Ultimos 3 dias"]} />
+      <Dropdown label="Categoria" options={["Administracion", "Contabilidad, Finanzas", "Ventas"]}></Dropdown>
+      <Dropdown label="Lugar de trabajo" options={["Bogota"]}></Dropdown>
+      <Dropdown label="Experiencia" options={["Sin experiencia", "1 año", "2 años"]}></Dropdown>
+      <Dropdown label="Salario" options={["Menos de 700.000", "Mas de 700.000", "Mas de 1.000.000"]}></Dropdown>
+      <Dropdown label="Jornada" options={["Tiempo completo", "Tiempo parcial"]}></Dropdown>
+      <Dropdown label="Contrato" options={["Contrato a termino indefinido", "Contrato de obra o labor", "Contrato a termino fijo"]}></Dropdown>
+    </div>
 
         <section className="section-job-panels">
           <section className="section-listings-panel">
-            <nav className="nav-job-categories"><p>Busca tu trabajo deseado</p></nav>
+              <nav className="nav-job-categories"><p>Busca tu trabajo deseado</p></nav>
             <div className="div-job-cards-grid">
               {filteredJobListings.length > 0 ? (
                 filteredJobListings.map((job) => (
@@ -69,18 +81,6 @@ const AspirantePage = () => {
                     <p className="p-contrato">{job.contrato}</p>
                     <p className="p-empresa">{job.empresa}</p>
                     <div className="div-job-card-actions">
-                      <button
-                        className="button-apply"
-                        onClick={(e) => { e.stopPropagation(); alert(`Te has postulado a: ${job.name}`); }}
-                      >
-                        Postularme
-                      </button>
-                      <button
-                        className="button-save"
-                        onClick={(e) => { e.stopPropagation(); alert(`Has guardado la oferta: ${job.name}`); }}
-                      >
-                        Guardar
-                      </button>
                     </div>
                   </div>
                 ))
@@ -95,13 +95,13 @@ const AspirantePage = () => {
           <section className="section-details-panel">
             {selectedJob ? (
               <div className="div-job-detail-content">
-                <h2 className="h2-job-detail-title">Detalle de {selectedJob.name}</h2>
-                <p className="p-job-detail-location">Ubicación: {selectedJob.location}</p>
-                <p className="p-job-detail-time">Publicado: {selectedJob.timePosted}</p>
-                <p className="p-job-detail-postuled">Termina: {selectedJob.timepostuled}</p>
-                <p className="p-job-detail-modalidad">Modalidad: {selectedJob.modalidad}</p>
+                <h2 className="h2-job-detail-title">{selectedJob.name}</h2>
+                <p className="p-job-detail-empresa"> <p>{selectedJob.empresa}</p></p>
+                <p className="p-job-detail-location">{selectedJob.location}</p>
+                <Buttons></Buttons>
+                <p className="p-job-detail-salary">{selectedJob.salary} (Mensual)</p>
                 <p className="p-job-detail-contrato">Contrato: {selectedJob.contrato}</p>
-                <p className="p-job-detail-empresa">Empresa: {selectedJob.empresa}</p>
+                <p className="p-job-detail-fulltime">{selectedJob.fulltime}</p>
                 <p className="p-job-detail-description">
                   {selectedJob.description}
                 </p>
@@ -114,7 +114,6 @@ const AspirantePage = () => {
           </section>
         </section>
       </main>
-      <Footer />
     </>
   );
 };

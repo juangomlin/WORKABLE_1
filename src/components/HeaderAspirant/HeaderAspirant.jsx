@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaBriefcase, FaMapMarkerAlt, FaSearch } from 'react-icons/fa';
-import './HeaderAspirant.css'; 
+import './HeaderAspirant.css';
 
 const HeaderAspirant = () => {
   return (
@@ -19,17 +19,15 @@ const HeaderAspirant = () => {
       <div className="header-center">
         <div className="job-search-bar">
           <div className="search-section">
-            <FaBriefcase className="search-icon" />
-            <input type="text" placeholder="asesor comercial" />
+            <FaBriefcase className="search-icon" color='#2541a0'/>
+            <input type="text" className='input-text' placeholder="Cargo" />
           </div>
           <div className="divider" />
           <div className="search-section">
-            <FaMapMarkerAlt className="search-icon" />
-            <input type="text" placeholder="Bogotá, D.C." />
+            <FaMapMarkerAlt className="search-icon" color='#2541a0' />
+            <input type="text" className='input-text' placeholder='Ciudad' />
           </div>
-          <button className="search-button">
-            <FaSearch />
-          </button>
+            <FaSearch color='white' />
         </div>
       </div>
 
