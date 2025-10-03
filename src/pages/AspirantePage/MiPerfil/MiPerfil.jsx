@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link } from 'react-router-dom';
 import { FaUser, FaBriefcase, FaWheelchair} from 'react-icons/fa';
-import { CheckCircle, Eye, IdCard, Medal, Rocket, ChevronRight, Settings, BadgeDollarSign } from 'lucide-react';
+import { CheckCircle, Eye, IdCard, Medal, Rocket, ChevronRight, Settings, BadgeDollarSign, HomeIcon, FileText, Send, Star } from 'lucide-react';
 import './MiPerfil.css';
 import HeaderAspirant from '../../../components/HeaderAspirant/HeaderAspirant';
 
@@ -10,7 +10,6 @@ const MiPerfil = () => {
   return (
     <>
     <HeaderAspirant />
-    
     <main className='main-perfil'>
       <section className='left-section'>
         <div className='box-left-perfil'>
