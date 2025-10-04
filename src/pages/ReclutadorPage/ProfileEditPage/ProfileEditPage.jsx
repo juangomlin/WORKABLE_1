@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import HeaderReclutador from '../../../components/HeaderReclutador/HeaderReclutador';
-import Footer from '../../../components/Footer/Footer';
 import './ProfileEditPage.css';
 
 function ProfileEditPage() {
@@ -69,7 +68,6 @@ function ProfileEditPage() {
           </section>
         </div>
       </main>
-      <Footer />
     </>
   );
 }
