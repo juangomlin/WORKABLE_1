@@ -4,12 +4,14 @@ import { FaUser, FaBriefcase, FaWheelchair} from 'react-icons/fa';
 import { CheckCircle, Eye, IdCard, Medal, Rocket, ChevronRight, Settings, BadgeDollarSign } from 'lucide-react';
 import './MiPerfil.css';
 import HeaderAspirant from '../../../components/HeaderAspirant/HeaderAspirant';
+import Menu from '../../../components/Menu/Menu';
 
 const MiPerfil = () => {
 
   return (
     <>
     <HeaderAspirant />
+    <Menu />
     
     <main className='main-perfil'>
       <section className='left-section'>
