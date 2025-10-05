@@ -35,7 +35,7 @@ const HeaderAspirant = () => {
         <div className="perfil-section">
           <div className="search-seccion">
             <div className='name'>
-              Juan Perez
+              <div className='n'></div>
             </div>
           </div>
           <div className="divider" />
