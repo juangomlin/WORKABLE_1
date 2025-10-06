@@ -24,9 +24,9 @@ const LoginPage = () => {
       if (!res.ok) throw new Error('Credenciales inválidas');
 
       const data = await res.json();
-      localStorage.setItem('token', data.token); // Guarda el JWT
+      localStorage.setItem('token', data.token);
 
-      navigate('/Aspirante'); // Redirige después del login
+      navigate('/Aspirante');
     } catch (error) {
       setErrorMessage(error.message);
     }

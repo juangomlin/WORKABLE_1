@@ -84,35 +84,35 @@ const SignUpPage = () => {
                     <input type='text' name='nom' placeholder='Nombre' required className='input-signup' pattern="[A-Za-zÀ-ÿ\s]+" title="Solo se permiten letras y espacios" />
                     <input type='text' name='ape' placeholder='Apellido' required className='input-signup'  pattern="[A-Za-zÀ-ÿ\s]+" title="Solo se permiten letras y espacios" />
 
-                    {/* Correo y Ubicación */}
+
                     <input type='email' name='corr' placeholder='Correo electrónico' required className='input-signup' />
                     <input type='text' name='ubi' placeholder='Ubicación' required className='input-signup' />
 
-                    {/* Teléfono y Fecha de nacimiento */}
+
                     <input type='tel' name='tel' placeholder='Número de Teléfono' required className='input-signup' />
                     <input type='date' name='feNa' placeholder='Fecha de Nacimiento' required className='input-signup' />
 
-                    {/* Contraseña */}
+
                     <input type='password' name='cla' placeholder='Contraseña' required className='input-signup' />
 
-                    {/* Género (usa IDs numéricos que correspondan en tu DB) */}
+
                     <select name='genero_id' required className='input-signup'>
                       <option value=''>Selecciona tu género</option>
                       <option value='1'>Masculino</option>
                       <option value='2'>Femenino</option>
                     </select>
 
-                    {/* Tipo de documento (usa IDs numéricos que correspondan en tu DB) */}
+
                     <select name='tipDoc_id' required className='input-signup'>
                       <option value=''>Tipo de Documento</option>
                       <option value='1'>CC</option>
                       <option value='2'>TI</option>
                     </select>
 
-                    {/* Número de Documento */}
+
                     <input type="number" name="numDoc" placeholder="Número de Documento" required className="input-signup" min="0" step="1" />
 
-                    {/* Ciudad (municipio, usa IDs de tu DB) */}
+
                     <select name='munici_id' required className='input-signup'>
                       <option value=''>Ciudad</option>
                       <option value='1'>Cali</option>
