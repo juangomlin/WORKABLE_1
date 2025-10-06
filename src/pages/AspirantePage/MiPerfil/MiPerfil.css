@@ -234,7 +234,7 @@
     gap: 4px;
 }
 
-.btn-eliminar {
+.button-eliminar {
     font-size: 16px;
     padding: 12px 24px; /* agrega algo de espacio horizontal */
     background-color: #e53e3e;
@@ -250,7 +250,7 @@
     align-items: center;
 }
 
-.btn-eliminar:hover {
+.button-eliminar:hover {
     background-color: #c53030;
 }
 
