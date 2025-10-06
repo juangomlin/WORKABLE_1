@@ -1,11 +1,13 @@
 .main-perfil {
-    background-color: aliceblue;
+    background-color: #f7fafc;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     flex-direction: row;
     gap: 20px;
-    padding: 20px;
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .left-section {
@@ -20,38 +22,35 @@
 .box-left-application,
 .section-perfil {
     background-color: white;
-    box-shadow: 1px 2px 2px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    border-radius: 18px;
+    border-radius: 12px;
     width: 100%;
-}
-
-.box-left-perfil {
-    height: auto;
 }
 
 .perfil {
     display: flex;
     align-items: center;
     gap: 15px;
-    }
+}
 
 .text-perfil h1 {
-    font-size: 20px;
+    font-size: 22px;
     margin: 4px 0;
-    }
+    color: #2d3748;
+}
 
 .text-perfil p {
     margin: 2px 0;
     font-size: 14px;
-    color: #333;
+    color: #4a5568;
 }
 
 .profile-pic {
     position: relative;
     width: 90px;
     height: 90px;
-    border: 1px solid grey;
+    border: 3px solid #ccc;
     border-radius: 50%;
     overflow: hidden;
     cursor: pointer;
@@ -61,7 +60,7 @@
 .profile-pic .overlay {
     position: absolute;
     inset: 0;
-    background-color: rgba(0, 0, 0, 0.6);
+    background-color: rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -80,25 +79,24 @@
 
 .sub-text h3 {
     font-weight: 500;
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.4;
 }
 
 .title-box-left {
     text-align: center;
     margin-bottom: 12px;
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
 }
 
 .buttons-container {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 15px;
 }
 
-.buttons-1,
-.buttons-2 {
+.buttons-1, .buttons-2 {
     display: flex;
     gap: 20px;
     justify-content: center;
@@ -107,30 +105,28 @@
 .button {
     border: none;
     background: transparent;
-    font-size: 15px;
+    font-size: 16px;
     display: flex;
     align-items: center;
     gap: 6px;
-    padding: 8px;
+    padding: 10px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 8px;
 }
 
 .button:hover {
-    background-color: aliceblue;
-    border-radius: 8px;
-    transition: background 0.3s ease;
+    background-color: #ebf4ff;
 }
 
 .icon {
+    width: 35px;
+    height: 35px;
+    background-color: #e2e8f0;
     border-radius: 8px;
-    padding: 5px;
-    background-color: aliceblue;
-    width: 45px;
-    height: 32px;
-}
-
-.section-perfil {
-    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .buttons-perfil {
@@ -142,11 +138,11 @@
     text-decoration: none;
     color: inherit;
     border-radius: 12px;
+    transition: background-color 0.3s ease;
 }
 
 .buttons-perfil:hover {
-    background-color: aliceblue;
-    transition: background 0.3s ease;
+    background-color: #f0f4f8;
 }
 
 .Button {
@@ -176,6 +172,7 @@
 .title-offers {
     padding: 12px 16px;
     border-bottom: 1px solid #e5e7eb;
+    background-color: #edf2f7;
 }
 
 .text-offers {
@@ -237,52 +234,65 @@
     gap: 4px;
 }
 
+.btn-eliminar {
+    font-size: 16px;
+    padding: 12px 24px; /* agrega algo de espacio horizontal */
+    background-color: #e53e3e;
+    color: white;
+    border: none; /* quita el borde por defecto del button */
+    border-radius: 12px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    display: inline-flex; /* para alinear iconos si los agregas */
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-eliminar:hover {
+    background-color: #c53030;
+}
 
 @media (max-width: 1024px) {
-.main-perfil {
-    flex-direction: column;
-    align-items: stretch;
-}
+    .main-perfil {
+        flex-direction: column;
+        align-items: stretch;
+    }
 
-.left-section,
-.right-section {
-    width: 100%;
-    margin: 0;
-}
+    .left-section, .right-section {
+        width: 100%;
+        margin: 0;
+    }
 
-.box-left-perfil,
-.box-left-application,
-.section-perfil,
-.container-oferts {
-    width: 100%;
-}
+    .box-left-perfil, .box-left-application, .section-perfil, .container-oferts {
+        width: 100%;
+    }
 
-.buttons-1,
-.buttons-2 {
-    gap: 12px;
-}
+    .buttons-1, .buttons-2 {
+        gap: 12px;
+    }
 }
 
 @media (max-width: 600px) {
-.perfil {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-}
+    .perfil {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 
-.text-perfil {
-    margin-left: 0;
-    padding: 8px 0;
-}
+    .text-perfil {
+        margin-left: 0;
+        padding: 8px 0;
+    }
 
-.buttons-1,
-.buttons-2 {
-    flex-direction: column;
-}
+    .buttons-1, .buttons-2 {
+        flex-direction: column;
+    }
 
-.salary {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 4px;
-}
+    .salary {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+    }
 }
