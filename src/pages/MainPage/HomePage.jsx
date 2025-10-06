@@ -111,9 +111,6 @@ const HomePage = () => {
           <Link to="/Empresas" className="link-companies-mp">Ver todas las empresas</Link>
       </div>
 
-
-        
-
         <section className='section-applicant'>
           <div className="img-applicant">
             <img src="https://i.postimg.cc/htsSQDKG/image.png" alt="appl" className='img-ap-link' />
@@ -128,7 +125,7 @@ const HomePage = () => {
             </div>
           </div>
           <button className='button-section-applicant'>
-              <Link to="/SignUp" className='link-companies-mp'>Crear Cuenta</Link>
+              <Link to="/SignUp" className='link-companies-mp-2'>Crear Cuenta</Link>
           </button>
         </section>
 
