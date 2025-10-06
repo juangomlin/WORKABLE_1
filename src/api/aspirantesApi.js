@@ -1,5 +1,3 @@
-import { data } from "react-router-dom";
-
 const API_URL = "http://localhost:8080/api/aspirante";
 
 export const buscarAspirantePorId = async (id) => {
