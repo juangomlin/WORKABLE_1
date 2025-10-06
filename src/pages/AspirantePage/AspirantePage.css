@@ -27,9 +27,8 @@
   border: 1px solid #ddd;
   border-radius: 50px;
   padding: 1px 16px;
-  background: #3a3939;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
   background: #fff;
+  box-shadow: 0 0 5px rgba(0,0,0,0.1);
   max-width: 300px;
   width: 70%;
 }
@@ -112,7 +111,7 @@
 
 .button-perfil:hover {
   background-color: #2541a0;
-  color: rgb(255, 255, 255);
+  color: #fff;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
@@ -206,35 +205,43 @@
 .p-job-time::before {
   content: "⏰ ";
 }
+
 .p-job-postuled {
   font-size: 0.85rem;
   color: #888;
   margin-bottom: 0.3rem;
 }
+
 .p-job-postuled::before {
   content: "⏰ ";
 }
-.p-modalidad{
+
+.p-modalidad {
   font-size: 0.85rem;
   color: #888;
   margin-bottom: 0.3rem;
 }
+
 .p-modalidad::before {
   content: "🏠💻 ";
 }
-.p-contrato{
+
+.p-contrato {
   font-size: 0.85rem;
   color: #888;
   margin-bottom: 0.3rem;
 }
+
 .p-contrato::before {
   content: "📄 ";
 }
-.p-empresa{
+
+.p-empresa {
   font-size: 0.85rem;
   color: #888;
   margin-bottom: 0.3rem;
 }
+
 .p-empresa::before {
   content: "🏢 ";
 }
@@ -274,7 +281,7 @@
 }
 
 .section-details-panel {
-  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.1);;
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.1);
   background-color: #fff;
   padding: 1rem;
   max-height: 80vh;
@@ -322,7 +329,6 @@
   margin-bottom: 8px;
 }
 
-
 .p-job-detail-time,
 .p-job-detail-postuled,
 .p-job-detail-description,
@@ -339,4 +345,87 @@
   height: 100%;
   color: #777;
   font-style: italic;
+}
+
+
+@media (max-width: 1024px) {
+  .section-job-panels {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+  }
+
+  .section-details-panel {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .header-conta {
+    grid-template-columns: 1fr 1fr;
+    padding: 0 20px;
+  }
+
+  .header-right-container .perfil-section {
+    width: 100%;
+    max-width: 220px;
+  }
+
+  .header-center .job-search-bar {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .header-conta {
+    grid-template-columns: 1fr;
+    height: auto;
+    gap: 10px;
+    padding: 10px 20px;
+  }
+
+  .header-center,
+  .header-left,
+  .header-right-container {
+    justify-content: center;
+  }
+
+  .header-center .job-search-bar {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .header-right-container .perfil-section {
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
+  }
+
+  .section-job-panels {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+  }
+
+  .section-details-panel {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-conta {
+    padding: 10px;
+  }
+
+  .search-section input {
+    font-size: 12px;
+    margin-top: 10px;
+  }
+
+  .button-perfil {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .p-job-button {
+    width: 100%;
+    font-size: 14px;
+  }
 }
