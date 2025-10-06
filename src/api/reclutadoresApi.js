@@ -1,15 +1,15 @@
-// src/api/empresasApi.js
+// src/api/reclutadorAPI.js
 
-export const getAllEmpresas = async () => {
+export const getAllReclutadores = async () => {
   try {
-    const response = await fetch("http://localhost:8080/api/empresa/all", {
+    const response = await fetch("http://localhost:8080/api/reclutador/all", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
       },
     });
     if (!response.ok) {
-      throw new Error("error al obtener empresas");
+      throw new Error("error al obtener reclutadores");
     }
     const data = await response.json();
     return data;
@@ -21,36 +21,36 @@ export const getAllEmpresas = async () => {
   }
 };
 
-export const getEmpresaById = async (id) => {
-  const response = await fetch(`http://localhost:8080/api/empresa/${id}`, {
+export const getReclutadorById = async (id) => {
+  const response = await fetch(`http://localhost:8080/api/reclutador/${id}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
     },
   });
   if (!response.ok) {
-    throw new Error("empresa no encontrada");
+    throw new Error("reclutador no encontrado");
   }
   const data = await response.json();
   return data;
 };
 
-export const getAllEmpresasDto = async () => {
-  const response = await fetch("http://localhost:8080/api/empresa", {
+export const getAllReclutadoresDto = async () => {
+  const response = await fetch("http://localhost:8080/api/reclutador", {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
     },
   });
   if (!response.ok) {
-    throw new Error("error al obtener empresas");
+    throw new Error("error al obtener reclutadores");
   }
   const data = await response.json();
   return data;
 };
 
-export const crearEmpresa = async (objeto) => {
-  const response = await fetch("http://localhost:8080/api/empresa", {
+export const crearReclutador = async (objeto) => {
+  const response = await fetch("http://localhost:8080/api/reclutador", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -59,21 +59,21 @@ export const crearEmpresa = async (objeto) => {
   });
 
   if (!response.ok) {
-    throw new Error("error al crear empresa");
+    throw new Error("error al crear reclutador");
   }
   const data = await response.json();
   return data;
 };
 
-export const eliminarEmpresa = async (id) => {
-  const response = await fetch(`http://localhost:8080/api/empresa/${id}`, {
+export const eliminarReclutador = async (id) => {
+  const response = await fetch(`http://localhost:8080/api/reclutador/${id}`, {
     method: "DELETE",
     headers: {
       "Content-Type": "application/json",
     },
   });
   if (!response.ok) {
-    throw new Error("error al eliminar empresa");
+    throw new Error("error al eliminar reclutador");
   }
   return null;
 };

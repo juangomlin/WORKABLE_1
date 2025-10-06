@@ -9,12 +9,13 @@ const EmpresaForm = () => {
     const formData = new FormData(event.target);
     const data = Object.fromEntries(formData.entries());
 
-    if (!data.nom || !data.ubi || !data.desc || !data.numTrab || !data.correoCorp || !data.cat_id || !data.munici_id) {
+    if (!data.nit_id || !data.nom || !data.ubi || !data.desc || !data.numTrab || !data.correoCorp || !data.cat_id || !data.munici_id) {
       alert("❌ Todos los campos son obligatorios");
       return;
     }
 
     const empresaData = {
+      nit_id: Number(data.nit_id),
       nom: data.nom,
       ubi: data.ubi,
       desc: data.desc,
@@ -81,6 +82,13 @@ const EmpresaForm = () => {
           type='email'
           name='correoCorp'
           placeholder='Correo corporativo'
+          required
+          className='input-signup'
+        />
+        <input
+          type='text'
+          name='nit_id'
+          placeholder='NIT de la empresa'
           required
           className='input-signup'
         />
