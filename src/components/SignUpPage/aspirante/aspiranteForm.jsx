@@ -1,8 +1,10 @@
 import React, { useRef } from 'react';
 import { crearAspirante } from '../../../api/aspirantesApi';
+import { useNavigate } from 'react-router-dom';
 
 const AspiranteForm = () => {
   const formRef = useRef(null);
+  const navigate = useNavigate();
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -28,18 +30,17 @@ const AspiranteForm = () => {
       !data.feNa ||
       !data.cla
     ) {
-      alert("❌ Error al registrarse: datos inválidos");
+      alert("Error al registrarse: datos inválidos");
       return;
     }
 
     try {
       const aspiranteCreado = await crearAspirante(data);
-      console.log("✅ Aspirante creado:", aspiranteCreado);
-      alert("✅ Aspirante registrado con éxito");
-      formRef.current.reset();
+      alert("Aspirante registrado con éxito");
+      navigate('/Aspirante'); 
     } catch (error) {
-      console.error("❌ Error al crear aspirante:", error.message);
-      alert("❌ Error al registrarse: " + error.message);
+      console.error("Error al crear aspirante:", error.message);
+      alert("Error al registrarse: " + error.message);
     }
   };
 
