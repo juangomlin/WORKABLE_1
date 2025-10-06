@@ -1,198 +1,133 @@
-import React from 'react';
-import {Link } from 'react-router-dom';
-import { FaUser, FaBriefcase, FaWheelchair} from 'react-icons/fa';
-import { CheckCircle, Eye, IdCard, Medal, Rocket, ChevronRight, Settings, BadgeDollarSign } from 'lucide-react';
-import './MiPerfil.css';
+import React, { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { FaUser, FaBriefcase, FaWheelchair } from 'react-icons/fa';
+import { CheckCircle, Eye, IdCard, Rocket, Settings, BadgeDollarSign } from 'lucide-react';
 import HeaderAspirant from '../../../components/HeaderAspirant/HeaderAspirant';
 import Menu from '../../../components/Menu/Menu';
+import './MiPerfil.css';
 
 const MiPerfil = () => {
+  const [aspirante, setAspirante] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState('');
+  const navigate = useNavigate();
+
+  const idAspirante = localStorage.getItem('idAspirante');
+  const token = localStorage.getItem('token');
+
+  // Obtener perfil desde backend
+  const obtenerAspirante = async (id) => {
+    try {
+      const res = await fetch(`http://localhost:8080/api/aspirante/${id}`, {
+        headers: { 
+          'Authorization': `Bearer ${token}`,
+          'Content-Type': 'application/json'
+        }
+      });
+
+      if (!res.ok) throw new Error('Error al obtener el perfil');
+
+      const data = await res.json();
+      setAspirante(data);
+      setLoading(false);
+    } catch (err) {
+      console.error(err);
+      setError('No se pudo cargar el perfil');
+      setLoading(false);
+    }
+  };
+
+  // Eliminar perfil
+  const handleEliminar = async () => {
+    if (!window.confirm("¿Estás seguro de que quieres eliminar tu perfil? Esta acción no se puede deshacer.")) return;
+
+    try {
+      const res = await fetch(`http://localhost:8080/api/aspirante/${idAspirante}`, {
+        method: 'DELETE',
+        headers: { 'Authorization': `Bearer ${token}` }
+      });
+
+      if (!res.ok) throw new Error('Error al eliminar perfil');
+
+      alert("Perfil eliminado correctamente");
+      localStorage.clear();
+      navigate('/'); 
+    } catch (err) {
+      console.error(err);
+      alert("No se pudo eliminar el perfil");
+    }
+  };
+
+  useEffect(() => {
+    if (idAspirante) {
+      obtenerAspirante(idAspirante);
+    } else {
+      setError('No hay ID de aspirante guardado en localStorage');
+      setLoading(false);
+    }
+  }, [idAspirante]);
+
+  if (loading) return <p>Cargando perfil...</p>;
+  if (error) return <p>{error}</p>;
 
   return (
     <>
-    <HeaderAspirant />
-    <Menu />
-    
-    <main className='main-perfil'>
-      <section className='left-section'>
-        <div className='box-left-perfil'>
-          <div className='perfil'>
-          <div class="profile-pic">
-          <div class="overlay">
-              <svg xmlns="http://www.w3.org/2000/svg" 
-                class="icon-photo" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" 
-                    d="M3 7h4l2-3h6l2 3h4v13H3V7z"/>
-                <circle cx="12" cy="13" r="4"/>
-              </svg>
-            </div>
-          </div>
-          <div className='text-perfil'>
-            <h1>Nombre de perfil</h1>
-            <p>Cargo</p>
-            <p>Perfil completado</p>
-          </div>
-        </div>
-        <div className='sub-text'>
-          <p>Lorem ipsum dolor sit!</p>
-          <h3>Lorem ipsum dolor sit amet consectetur adipisicing elit</h3>
-        </div>
-        </div>
+      <HeaderAspirant />
+      <Menu />
 
-        <div className='box-left-application'>
-          <div className="buttons-left-box">
-            <div className='title-box-left'>
-              <p>Mis aplicaciones</p>
-            </div>
-            <div className="buttons-container">
-              <div className='buttons-1'>
-                <button className="button">
-                  <CheckCircle className="icon" size={30} color='#313945'/>
-                  Aplicado <strong>0</strong>
-                </button>
-                <button className="button">
-                  <Eye className="icon" size={30} color='#313945' />
-                  HdV vista <strong>0</strong>
-                </button>
-              </div>
-              <div className='buttons-2'>
-                <button className="button">
-                  <IdCard className="icon" size={30} color='#313945' />
-                  En proceso <strong>0</strong>
-                </button>
-                <button className="button">
-                  <Medal className="icon" size={30} color='#313945' />
-                  Finalista <strong>0</strong>
-                </button>
-              </div>
-          </div>
-
-          </div>
-        </div>
-
-      <div className='section-perfil'>
-        <div className="perfil-button">
-        <Link to='/Professional' className="buttons-perfil">
-          <div className="Button">
-            <Rocket className="icon-2" size={18} color='#313945' />
-            <span>Desarrollo profesional</span>
-          </div>
-          <ChevronRight className="text-gray-500" size={20}/>
-        </Link>
-      </div>
-
-      <div className="perfil-button">
-        <Link to='/' className="buttons-perfil">
-          <div className="Button">
-            <Settings className="icon-2" size={18} color='#313945'/>
-            <span>Configuracion</span>
-          </div>
-          <ChevronRight className="text-gray-500" size={20}/>
-        </Link>
-        </div>
-      </div>
-    </section>
-
-      <section className='right-section'>
-        <div className='container-oferts'>
-          <div className='title-offers'>
-            <p className='text-offers'>Descubre estas opciones <strong>que te pueden interesar</strong></p>
-          </div>
-          <div className='offers-scroll'>
-            <article className='box-offers'>
-              <div className='offers'>
-                <div className='span-offers'>
-                </div>
-                <h3>Desarrollador frontend</h3>
-                <p>Next Solutions </p>
-                <p>Bogota D.C</p>
-                <div className='salary'>
-                  <span>
-                    <span className='icon-money'>
-                      <BadgeDollarSign></BadgeDollarSign>
-                      $ 2.100.000
-                    </span>
-                  </span>
-                <p>Ayer</p>
+      <main className='main-perfil'>
+        {/* Sección izquierda */}
+        <section className='left-section'>
+          <div className='box-left-perfil'>
+            <div className='perfil'>
+              <div className="profile-pic">
+                <div className="overlay">
+                  <svg xmlns="http://www.w3.org/2000/svg" 
+                    className="icon-photo" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" 
+                        d="M3 7h4l2-3h6l2 3h4v13H3V7z"/>
+                    <circle cx="12" cy="13" r="4"/>
+                  </svg>
                 </div>
               </div>
-            </article>
-            <article className='box-offers'>
-            <div className='offers'>
-              <div className='span-offers'>
-              </div>
-              <h3>Ingeniero de Software</h3>
-              <p>Tech Global</p>
-              <p>Medellín, Antioquia</p>
-              <div className='salary'>
-                <span>
-                  <span className='icon-money'>
-                    <BadgeDollarSign></BadgeDollarSign>
-                    $ 4.500.000
-                  </span>
-                </span>
-                <p>Hoy</p>
+              <div className='text-perfil'>
+                <h1>{aspirante?.nom} {aspirante?.ape}</h1>
+                <p>{aspirante?.cargo || 'Cargo no definido'}</p>
+                <p>Perfil completado <CheckCircle /></p>
               </div>
             </div>
-          </article>
-          <article className='box-offers'>
-            <div className='offers'>
-              <div className='span-offers'>
-              </div>
-              <h3>Analista de Datos</h3>
-              <p>DataCorp</p>
-              <p>Cali, Valle del Cauca</p>
-              <div className='salary'>
-                <span>
-                  <span className='icon-money'>
-                    <BadgeDollarSign></BadgeDollarSign>
-                    $ 3.800.000
-                  </span>
-                </span>
-                <p>Hace 2 días</p>
-              </div>
-            </div>
-          </article>
-          <article className='box-offers'>
-          <div className='offers'>
-            <div className='span-offers'>
-            </div>
-            <h3>Diseñador UX/UI</h3>
-            <p>Creative Studio</p>
-            <p>Barranquilla, Atlántico</p>
-            <div className='salary'>
-              <span>
-                <span className='icon-money'>
-                  <BadgeDollarSign></BadgeDollarSign>
-                  $ 2.800.000
-                </span>
-              </span>
-              <p>Hace 3 días</p>
+            <div className='sub-text'>
+              <p>{aspirante?.descripcion || 'Lorem ipsum dolor sit!'}</p>
+              <h3>{aspirante?.resumen || 'Resumen no disponible'}</h3>
             </div>
           </div>
-        </article>
-        <article className='box-offers'>
-        <div className='offers'>
-          <div className='span-offers'>
+        </section>
+
+        {/* Sección derecha */}
+        <section className='right-section'>
+          <div className='box-right-perfil'>
+            <h2>Información personal</h2>
+            <p><IdCard /> Documento: {aspirante?.numerDoc || 'N/A'}</p>
+            <p><FaUser /> Tipo de documento: {aspirante?.nombreTipDoc || 'N/A'}</p>
+            <p>Municipio: {aspirante?.nombreMunicipio || 'N/A'}</p>
+            <p>Género: {aspirante?.nombreGenero || 'N/A'}</p>
+            <p>Teléfono: {aspirante?.tel || 'N/A'}</p>
+            <p>Ubicación: {aspirante?.ubi || 'N/A'}</p>
+            <p>Fecha de nacimiento: {aspirante?.feNa ? new Date(aspirante.feNa).toLocaleDateString() : 'N/A'}</p>
+
+            <h2>Opciones</h2>
+            <ul className='menu-options'>
+              <li><Link to="/editar-perfil"><Settings /> Editar Perfil</Link></li>
+              <li><Link to="/mis-ofertas"><Rocket /> Mis Ofertas</Link></li>
+              <li><Link to="/visualizar-perfil"><Eye /> Ver Perfil Público</Link></li>
+            </ul>
+
+            <div className='button-eliminar' onClick={handleEliminar}>
+              ❌ Eliminar Cuenta
+            </div>
           </div>
-          <h3>Administrador de Bases de Datos</h3>
-          <p>Cloud Systems</p>
-          <p>Cartagena, Bolívar</p>
-          <div className='salary'>
-            <span>
-              <span className='icon-money'>
-                <BadgeDollarSign></BadgeDollarSign>
-                $ 4.200.000
-              </span>
-            </span>
-            <p>Hace 5 días</p>
-          </div>
-        </div>
-      </article>
-          </div>
-        </div>
-      </section>
-    </main>
+        </section>
+      </main>
     </>
   );
 };

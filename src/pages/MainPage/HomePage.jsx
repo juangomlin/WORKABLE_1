@@ -43,48 +43,50 @@ const HomePage = () => {
           </div>
         </section>
 
-
         <section className='section-publish'>
-          <a href="" className='link-to-publish'><Link to="/Reclutador/reclutamiento" className="links">
-          <div className='div-publish'>
-            <a href="" className='link-to-publish'><Link to="/Reclutador/reclutamiento" className=""> <div className='title-publish'>¿Eres empresa?  <h1>Publica ofertas gratis</h1>  hoy mismo</div></Link></a>
-            <div className='publish'>
-              <div className='box-publish'>
-                <div className='title-boxes'>
-                  <div className='number'>1</div>
-                  <div className='div-link-publish'>
-                <a href="" className='link-to-publish'><Link to="/Reclutador/reclutamiento" className="links-title">Publica gratis</Link></a>
-                <div className='div-box'>
-                  <h3>Crea tu cuenta,</h3><p>publica y llega a diversidad de profesionales.</p>
+          <Link to="/Reclutador/reclutamiento" className="links">
+            <div className='div-publish'>
+              <div className='title-publish'>¿Eres empresa? <h1>Publica ofertas gratis</h1> hoy mismo</div>
+            </div>
+          </Link>
+          <div className='publish'>
+            <div className='box-publish'>
+              <div className='title-boxes'>
+                <div className='number'>1</div>
+                <div className='div-link-publish'>
+                  <Link to="/Reclutador/reclutamiento" className="links-title">Publica gratis</Link>
+                  <div className='div-box'>
+                    <h3>Crea tu cuenta,</h3>
+                    <p>publica y llega a diversidad de profesionales.</p>
+                  </div>
                 </div>
               </div>
-                </div>
             </div>
             <div className='box-publish'>
               <div className='title-boxes'>
                 <div className='number'>2</div>
-              <div className='div-link-publish'>
-                <a href="" className='link-to-publish'><Link to="/Reclutador/reclutamiento" className="links-title">Selecciona</Link></a>
-                <div className='div-box'>
-                  <h3>Accede a perfiles</h3><p>y filtra segun tus necesidades.</p>
+                <div className='div-link-publish'>
+                  <Link to="/Reclutador/reclutamiento" className="links-title">Selecciona</Link>
+                  <div className='div-box'>
+                    <h3>Accede a perfiles</h3>
+                    <p>y filtra segun tus necesidades.</p>
+                  </div>
                 </div>
-              </div>
               </div>
             </div>
             <div className='box-publish'>
               <div className='title-boxes'>
                 <div className='number'>3</div>
-              <div className='div-link-publish'>
-                <a href="" className='link-to-publish'><Link to="/Reclutador/reclutamiento" className="links-title">Encuentra al mejor perfil</Link></a>
-                <div className='div-box'>
-                  <h3>Contacta al candidato</h3><p>que mejor encaja en tu empresa.</p>
+                <div className='div-link-publish'>
+                  <Link to="/Reclutador/reclutamiento" className="links-title">Encuentra al mejor perfil</Link>
+                  <div className='div-box'>
+                    <h3>Contacta al candidato</h3>
+                    <p>que mejor encaja en tu empresa.</p>
+                  </div>
                 </div>
               </div>
-              </div>
-            </div>
             </div>
           </div>
-          </Link></a>
         </section>
 
           <section className="empresas-container">

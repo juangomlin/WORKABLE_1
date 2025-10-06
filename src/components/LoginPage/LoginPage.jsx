@@ -18,13 +18,23 @@ const LoginPage = () => {
       const res = await fetch('http://localhost:8080/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ correo, cla }),
+        body: JSON.stringify({ correo, clave: cla }),
       });
 
       if (!res.ok) throw new Error('Credenciales inválidas');
 
       const data = await res.json();
+      console.log('Login response:', data); 
       localStorage.setItem('token', data.token);
+      localStorage.setItem('idAspirante', data.id);
+      localStorage.setItem('nombre', data.nombre);
+      localStorage.setItem('apellido', data.apellido);
+      localStorage.setItem('correo', data.correo);
+      localStorage.setItem('telefono', data.telefono);
+      localStorage.setItem('ubicacion', data.ubicacion);
+      localStorage.setItem('fechaNacimiento', data.fechaNacimiento);
+      localStorage.setItem('tipoDocumento', data.tipoDocumento);
+      localStorage.setItem('numeroDocumento', data.numeroDocumento); 
 
       navigate('/Aspirante');
     } catch (error) {
